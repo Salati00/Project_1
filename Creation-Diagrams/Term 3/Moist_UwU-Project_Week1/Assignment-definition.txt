@@ -1,0 +1,3 @@
+Assignment A was handled by Ohannes Hajjar (File titled A.drawio, openable via the website "https://www.draw.io"),
+Assignment B was handled by Sam Lo (File titled B.drawio, openable via the website "https://www.draw.io"),
+Assignment C was handled by Giorgio Salati (File titled C.sql, openable via any text editor).
