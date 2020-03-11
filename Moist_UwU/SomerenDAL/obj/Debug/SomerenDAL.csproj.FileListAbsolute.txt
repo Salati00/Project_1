@@ -22,3 +22,12 @@ D:\School\Projects\Moist_UwU\Moist_UwU\SomerenDAL\obj\Debug\SomerenDAL.csprojAss
 D:\School\Projects\Moist_UwU\Moist_UwU\SomerenDAL\obj\Debug\SomerenDAL.csproj.CopyComplete
 D:\School\Projects\Moist_UwU\Moist_UwU\SomerenDAL\obj\Debug\SomerenDAL.dll
 D:\School\Projects\Moist_UwU\Moist_UwU\SomerenDAL\obj\Debug\SomerenDAL.pdb
+E:\Projects\Moist_UwU\Moist_UwU\SomerenDAL\bin\Debug\SomerenDAL.dll.config
+E:\Projects\Moist_UwU\Moist_UwU\SomerenDAL\bin\Debug\SomerenDAL.dll
+E:\Projects\Moist_UwU\Moist_UwU\SomerenDAL\bin\Debug\SomerenDAL.pdb
+E:\Projects\Moist_UwU\Moist_UwU\SomerenDAL\bin\Debug\SomerenModel.dll
+E:\Projects\Moist_UwU\Moist_UwU\SomerenDAL\bin\Debug\SomerenModel.pdb
+E:\Projects\Moist_UwU\Moist_UwU\SomerenDAL\obj\Debug\SomerenDAL.csprojAssemblyReference.cache
+E:\Projects\Moist_UwU\Moist_UwU\SomerenDAL\obj\Debug\SomerenDAL.csproj.CopyComplete
+E:\Projects\Moist_UwU\Moist_UwU\SomerenDAL\obj\Debug\SomerenDAL.dll
+E:\Projects\Moist_UwU\Moist_UwU\SomerenDAL\obj\Debug\SomerenDAL.pdb
