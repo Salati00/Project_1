@@ -13,3 +13,20 @@ C:\Users\Thijs Otter\Desktop\INholland\Project Databases\2018-2019\Someren1819\S
 C:\Users\Thijs Otter\Desktop\INholland\Project Databases\2018-2019\Someren1819\SomerenUI\bin\Debug\SomerenDAL.pdb
 C:\Users\Thijs Otter\Desktop\INholland\Project Databases\2018-2019\Someren1819\SomerenUI\bin\Debug\SomerenLogic.pdb
 C:\Users\Thijs Otter\Desktop\INholland\Project Databases\2018-2019\Someren1819\SomerenUI\bin\Debug\SomerenModel.pdb
+D:\School\Projects\Moist_UwU\Moist_UwU\SomerenUI\bin\Debug\SomerenUI.exe.config
+D:\School\Projects\Moist_UwU\Moist_UwU\SomerenUI\bin\Debug\SomerenUI.exe
+D:\School\Projects\Moist_UwU\Moist_UwU\SomerenUI\bin\Debug\SomerenUI.pdb
+D:\School\Projects\Moist_UwU\Moist_UwU\SomerenUI\bin\Debug\SomerenDAL.dll
+D:\School\Projects\Moist_UwU\Moist_UwU\SomerenUI\bin\Debug\SomerenLogic.dll
+D:\School\Projects\Moist_UwU\Moist_UwU\SomerenUI\bin\Debug\SomerenModel.dll
+D:\School\Projects\Moist_UwU\Moist_UwU\SomerenUI\bin\Debug\SomerenDAL.pdb
+D:\School\Projects\Moist_UwU\Moist_UwU\SomerenUI\bin\Debug\SomerenDAL.dll.config
+D:\School\Projects\Moist_UwU\Moist_UwU\SomerenUI\bin\Debug\SomerenLogic.pdb
+D:\School\Projects\Moist_UwU\Moist_UwU\SomerenUI\bin\Debug\SomerenModel.pdb
+D:\School\Projects\Moist_UwU\Moist_UwU\SomerenUI\obj\Debug\SomerenUI.csprojAssemblyReference.cache
+D:\School\Projects\Moist_UwU\Moist_UwU\SomerenUI\obj\Debug\SomerenUI.SomerenUI.resources
+D:\School\Projects\Moist_UwU\Moist_UwU\SomerenUI\obj\Debug\SomerenUI.Properties.Resources.resources
+D:\School\Projects\Moist_UwU\Moist_UwU\SomerenUI\obj\Debug\SomerenUI.csproj.GenerateResource.cache
+D:\School\Projects\Moist_UwU\Moist_UwU\SomerenUI\obj\Debug\SomerenUI.csproj.CopyComplete
+D:\School\Projects\Moist_UwU\Moist_UwU\SomerenUI\obj\Debug\SomerenUI.exe
+D:\School\Projects\Moist_UwU\Moist_UwU\SomerenUI\obj\Debug\SomerenUI.pdb

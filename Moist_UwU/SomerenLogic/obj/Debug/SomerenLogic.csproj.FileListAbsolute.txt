@@ -16,3 +16,14 @@ C:\Users\Thijs Otter\Desktop\INholland\Project Databases\2018-2019\Someren1819\S
 C:\Users\Thijs Otter\Desktop\INholland\Project Databases\2018-2019\Someren1819\SomerenLogic\bin\Debug\SomerenModel.dll
 C:\Users\Thijs Otter\Desktop\INholland\Project Databases\2018-2019\Someren1819\SomerenLogic\bin\Debug\SomerenDAL.pdb
 C:\Users\Thijs Otter\Desktop\INholland\Project Databases\2018-2019\Someren1819\SomerenLogic\bin\Debug\SomerenModel.pdb
+D:\School\Projects\Moist_UwU\Moist_UwU\SomerenLogic\bin\Debug\SomerenLogic.dll
+D:\School\Projects\Moist_UwU\Moist_UwU\SomerenLogic\bin\Debug\SomerenLogic.pdb
+D:\School\Projects\Moist_UwU\Moist_UwU\SomerenLogic\bin\Debug\SomerenDAL.dll
+D:\School\Projects\Moist_UwU\Moist_UwU\SomerenLogic\bin\Debug\SomerenModel.dll
+D:\School\Projects\Moist_UwU\Moist_UwU\SomerenLogic\bin\Debug\SomerenDAL.pdb
+D:\School\Projects\Moist_UwU\Moist_UwU\SomerenLogic\bin\Debug\SomerenDAL.dll.config
+D:\School\Projects\Moist_UwU\Moist_UwU\SomerenLogic\bin\Debug\SomerenModel.pdb
+D:\School\Projects\Moist_UwU\Moist_UwU\SomerenLogic\obj\Debug\SomerenLogic.csprojAssemblyReference.cache
+D:\School\Projects\Moist_UwU\Moist_UwU\SomerenLogic\obj\Debug\SomerenLogic.csproj.CopyComplete
+D:\School\Projects\Moist_UwU\Moist_UwU\SomerenLogic\obj\Debug\SomerenLogic.dll
+D:\School\Projects\Moist_UwU\Moist_UwU\SomerenLogic\obj\Debug\SomerenLogic.pdb

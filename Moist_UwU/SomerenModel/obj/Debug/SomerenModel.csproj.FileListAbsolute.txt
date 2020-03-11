@@ -8,3 +8,8 @@ C:\Users\Thijs Otter\Desktop\INholland\Project Databases\2018-2019\Someren1819\S
 C:\Users\Thijs Otter\Desktop\INholland\Project Databases\2018-2019\Someren1819\SomerenModel\obj\Debug\SomerenModel.csprojResolveAssemblyReference.cache
 C:\Users\Thijs Otter\Desktop\INholland\Project Databases\2018-2019\Someren1819\SomerenModel\obj\Debug\SomerenModel.dll
 C:\Users\Thijs Otter\Desktop\INholland\Project Databases\2018-2019\Someren1819\SomerenModel\obj\Debug\SomerenModel.pdb
+D:\School\Projects\Moist_UwU\Moist_UwU\SomerenModel\bin\Debug\SomerenModel.dll
+D:\School\Projects\Moist_UwU\Moist_UwU\SomerenModel\bin\Debug\SomerenModel.pdb
+D:\School\Projects\Moist_UwU\Moist_UwU\SomerenModel\obj\Debug\SomerenModel.csprojAssemblyReference.cache
+D:\School\Projects\Moist_UwU\Moist_UwU\SomerenModel\obj\Debug\SomerenModel.dll
+D:\School\Projects\Moist_UwU\Moist_UwU\SomerenModel\obj\Debug\SomerenModel.pdb
