@@ -11,11 +11,8 @@ namespace SomerenDAL
         private SqlConnection conn;
         public Base()
         {
-            // DO NOT FORGET TO INSERT YOUR CONNECTION STRING NAMED 'SOMEREN DATABASE' IN YOUR APP.CONFIG!!
-            /*
                 conn = new SqlConnection(ConfigurationManager.ConnectionStrings["SomerenDatabase"].ConnectionString);
                 adapter = new SqlDataAdapter();
-             */
         }
 
         protected SqlConnection OpenConnection()
@@ -42,7 +39,7 @@ namespace SomerenDAL
                 adapter.InsertCommand = command;
                 command.ExecuteNonQuery();
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
                 //Print.ErrorLog(e);
                 throw;
@@ -62,7 +59,7 @@ namespace SomerenDAL
                 adapter.InsertCommand = command;
                 command.ExecuteNonQuery();
             }
-            catch (SqlException e)
+            catch (SqlException ex)
             {
                // Print.ErrorLog(e);
                 throw;
@@ -92,7 +89,7 @@ namespace SomerenDAL
                 adapter.Fill(dataSet);
                 dataTable = dataSet.Tables[0];
             }
-            catch (SqlException e)
+            catch (SqlException ex)
             {
                // Print.ErrorLog(e);
                 return null;
