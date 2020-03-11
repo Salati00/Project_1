@@ -12,7 +12,6 @@ namespace SomerenDAL
 {
     public class Student_DAO : Base
     {
-      
         public List<Student> Db_Get_All_Students()
         {
             string query = "SELECT student_id, first_name FROM [student]";
