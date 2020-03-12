@@ -38,3 +38,14 @@ E:\Projects\Moist_UwU\Moist_UwU\SomerenLogic\obj\Debug\SomerenLogic.csprojAssemb
 E:\Projects\Moist_UwU\Moist_UwU\SomerenLogic\obj\Debug\SomerenLogic.csproj.CopyComplete
 E:\Projects\Moist_UwU\Moist_UwU\SomerenLogic\obj\Debug\SomerenLogic.dll
 E:\Projects\Moist_UwU\Moist_UwU\SomerenLogic\obj\Debug\SomerenLogic.pdb
+C:\Users\wslo0\OneDrive\Documents\School\moist uwu\Moist_UwU\Moist_UwU\SomerenLogic\bin\Debug\SomerenLogic.dll
+C:\Users\wslo0\OneDrive\Documents\School\moist uwu\Moist_UwU\Moist_UwU\SomerenLogic\bin\Debug\SomerenLogic.pdb
+C:\Users\wslo0\OneDrive\Documents\School\moist uwu\Moist_UwU\Moist_UwU\SomerenLogic\bin\Debug\SomerenDAL.dll
+C:\Users\wslo0\OneDrive\Documents\School\moist uwu\Moist_UwU\Moist_UwU\SomerenLogic\bin\Debug\SomerenModel.dll
+C:\Users\wslo0\OneDrive\Documents\School\moist uwu\Moist_UwU\Moist_UwU\SomerenLogic\bin\Debug\SomerenDAL.pdb
+C:\Users\wslo0\OneDrive\Documents\School\moist uwu\Moist_UwU\Moist_UwU\SomerenLogic\bin\Debug\SomerenDAL.dll.config
+C:\Users\wslo0\OneDrive\Documents\School\moist uwu\Moist_UwU\Moist_UwU\SomerenLogic\bin\Debug\SomerenModel.pdb
+C:\Users\wslo0\OneDrive\Documents\School\moist uwu\Moist_UwU\Moist_UwU\SomerenLogic\obj\Debug\SomerenLogic.csprojAssemblyReference.cache
+C:\Users\wslo0\OneDrive\Documents\School\moist uwu\Moist_UwU\Moist_UwU\SomerenLogic\obj\Debug\SomerenLogic.csproj.CopyComplete
+C:\Users\wslo0\OneDrive\Documents\School\moist uwu\Moist_UwU\Moist_UwU\SomerenLogic\obj\Debug\SomerenLogic.dll
+C:\Users\wslo0\OneDrive\Documents\School\moist uwu\Moist_UwU\Moist_UwU\SomerenLogic\obj\Debug\SomerenLogic.pdb

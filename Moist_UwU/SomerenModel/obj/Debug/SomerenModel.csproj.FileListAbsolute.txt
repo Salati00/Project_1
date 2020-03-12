@@ -18,3 +18,8 @@ E:\Projects\Moist_UwU\Moist_UwU\SomerenModel\bin\Debug\SomerenModel.pdb
 E:\Projects\Moist_UwU\Moist_UwU\SomerenModel\obj\Debug\SomerenModel.csprojAssemblyReference.cache
 E:\Projects\Moist_UwU\Moist_UwU\SomerenModel\obj\Debug\SomerenModel.dll
 E:\Projects\Moist_UwU\Moist_UwU\SomerenModel\obj\Debug\SomerenModel.pdb
+C:\Users\wslo0\OneDrive\Documents\School\moist uwu\Moist_UwU\Moist_UwU\SomerenModel\bin\Debug\SomerenModel.dll
+C:\Users\wslo0\OneDrive\Documents\School\moist uwu\Moist_UwU\Moist_UwU\SomerenModel\bin\Debug\SomerenModel.pdb
+C:\Users\wslo0\OneDrive\Documents\School\moist uwu\Moist_UwU\Moist_UwU\SomerenModel\obj\Debug\SomerenModel.csprojAssemblyReference.cache
+C:\Users\wslo0\OneDrive\Documents\School\moist uwu\Moist_UwU\Moist_UwU\SomerenModel\obj\Debug\SomerenModel.dll
+C:\Users\wslo0\OneDrive\Documents\School\moist uwu\Moist_UwU\Moist_UwU\SomerenModel\obj\Debug\SomerenModel.pdb

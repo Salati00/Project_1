@@ -43,6 +43,7 @@ namespace SomerenUI
                 // hide all other panels
                 pnl_Dashboard.Hide();
                 img_Dashboard.Hide();
+                pnl_Rooms.Hide();
 
                 // show students
                 pnl_Students.Show();
@@ -55,6 +56,32 @@ namespace SomerenUI
 
                 // clear the listview before filling it again
                 listViewStudents.Clear();
+
+                foreach (SomerenModel.Student s in studentList)
+                {
+
+                    ListViewItem li = new ListViewItem(s.Name);
+                    listViewStudents.Items.Add(li);
+                }
+            }
+            else if (panelName == "Rooms")
+            {
+                // hide all other panels
+                pnl_Dashboard.Hide();
+                img_Dashboard.Hide();
+                pnl_Students.Hide();
+
+                // show rooms
+                pnl_Rooms.Show();
+
+
+
+                // fill the students listview within the students panel with a list of students
+                SomerenLogic.Student_Service studService = new SomerenLogic.Student_Service();
+                List<Student> studentList = studService.GetStudents();
+
+                // clear the listview before filling it again
+                listViewRooms.Clear();
 
                 foreach (SomerenModel.Student s in studentList)
                 {
@@ -94,5 +121,13 @@ namespace SomerenUI
         {
             showPanel("Students");
         }
+
+        private void roomsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showPanel("Rooms");
+        }
+
+
+
     }
 }
