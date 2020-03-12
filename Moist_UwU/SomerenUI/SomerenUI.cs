@@ -74,7 +74,6 @@ namespace SomerenUI
 
                 // show rooms
                 pnl_Rooms.Show();
-                listViewRooms.Show();
 
 
 

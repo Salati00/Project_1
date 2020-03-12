@@ -15,12 +15,12 @@ namespace SomerenLogic
 
         public List<Room> GetRooms()
         {
-            try
-            {
+            /*try
+            {*/
                 List<Room> rooms = room_db.Db_Get_All_Rooms();
                 return rooms;
-            }
-            catch (Exception ex)
+            /*}*/
+            /*catch (Exception ex)
             {
                 /*
                 // something went wrong connecting to the database, so we will add a fake student to the list to make sure the rest of the application continues working!
@@ -36,11 +36,11 @@ namespace SomerenLogic
                 b.BirthDate = DateTime.Parse("2019-03-04");
                 student.Add(b);
                 return student;
-                //throw new Exception("Someren couldn't connect to the database");*/
+                //throw new Exception("Someren couldn't connect to the database");
 
 
 
-            }
+            }*/
 
             return new List<Room>();
 
