@@ -11,7 +11,7 @@ namespace SomerenDAL
     public class Room_DAO : Base
     {
 
-        public List<Room> Db_get_all_Rooms()
+        public List<Room> Db_Get_All_Rooms()
         {
 
             string query = "SELECT room_id, room_capacity, room_type FROM [room]";

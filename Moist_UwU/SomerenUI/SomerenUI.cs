@@ -73,21 +73,22 @@ namespace SomerenUI
 
                 // show rooms
                 pnl_Rooms.Show();
+                listViewRooms.Show();
 
 
 
                 // fill the students listview within the students panel with a list of students
-                SomerenLogic.Student_Service studService = new SomerenLogic.Student_Service();
-                List<Student> studentList = studService.GetStudents();
+                SomerenLogic.Room_Service roomService = new SomerenLogic.Room_Service();
+                List<Room> roomList = roomService.GetRooms();
 
                 // clear the listview before filling it again
                 listViewRooms.Clear();
 
-                foreach (SomerenModel.Student s in studentList)
+                foreach (SomerenModel.Room s in roomList)
                 {
 
-                    ListViewItem li = new ListViewItem(s.Name);
-                    listViewStudents.Items.Add(li);
+                    ListViewItem li = new ListViewItem(s.Number.ToString());
+                    listViewRooms.Items.Add(li);
                 }
             }
         }
