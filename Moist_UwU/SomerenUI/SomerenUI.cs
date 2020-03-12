@@ -84,10 +84,10 @@ namespace SomerenUI
                 // clear the listview before filling it again
                 listViewRooms.Clear();
 
-                foreach (SomerenModel.Room s in roomList)
+                foreach (SomerenModel.Room r in roomList)
                 {
 
-                    ListViewItem li = new ListViewItem(s.Number.ToString());
+                    ListViewItem li = new ListViewItem("Room number:"+r.Number.ToString() +", Capacity:"+ r.Capacity.ToString()+ ", Room type:"+ r.Type.ToString());
                     listViewRooms.Items.Add(li);
                 }
             }
