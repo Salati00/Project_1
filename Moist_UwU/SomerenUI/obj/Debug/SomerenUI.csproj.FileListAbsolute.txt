@@ -64,3 +64,20 @@ C:\Users\wslo0\OneDrive\Documents\School\moist uwu\Moist_UwU\Moist_UwU\SomerenUI
 C:\Users\wslo0\OneDrive\Documents\School\moist uwu\Moist_UwU\Moist_UwU\SomerenUI\obj\Debug\SomerenUI.csproj.CopyComplete
 C:\Users\wslo0\OneDrive\Documents\School\moist uwu\Moist_UwU\Moist_UwU\SomerenUI\obj\Debug\SomerenUI.exe
 C:\Users\wslo0\OneDrive\Documents\School\moist uwu\Moist_UwU\Moist_UwU\SomerenUI\obj\Debug\SomerenUI.pdb
+C:\Users\hampi\OneDrive\Documents\GitHub\Database Project Term 3\Moist_UwU\Moist_UwU\SomerenUI\bin\Debug\SomerenUI.exe.config
+C:\Users\hampi\OneDrive\Documents\GitHub\Database Project Term 3\Moist_UwU\Moist_UwU\SomerenUI\bin\Debug\SomerenUI.exe
+C:\Users\hampi\OneDrive\Documents\GitHub\Database Project Term 3\Moist_UwU\Moist_UwU\SomerenUI\bin\Debug\SomerenUI.pdb
+C:\Users\hampi\OneDrive\Documents\GitHub\Database Project Term 3\Moist_UwU\Moist_UwU\SomerenUI\bin\Debug\SomerenDAL.dll
+C:\Users\hampi\OneDrive\Documents\GitHub\Database Project Term 3\Moist_UwU\Moist_UwU\SomerenUI\bin\Debug\SomerenLogic.dll
+C:\Users\hampi\OneDrive\Documents\GitHub\Database Project Term 3\Moist_UwU\Moist_UwU\SomerenUI\bin\Debug\SomerenModel.dll
+C:\Users\hampi\OneDrive\Documents\GitHub\Database Project Term 3\Moist_UwU\Moist_UwU\SomerenUI\bin\Debug\SomerenDAL.pdb
+C:\Users\hampi\OneDrive\Documents\GitHub\Database Project Term 3\Moist_UwU\Moist_UwU\SomerenUI\bin\Debug\SomerenDAL.dll.config
+C:\Users\hampi\OneDrive\Documents\GitHub\Database Project Term 3\Moist_UwU\Moist_UwU\SomerenUI\bin\Debug\SomerenLogic.pdb
+C:\Users\hampi\OneDrive\Documents\GitHub\Database Project Term 3\Moist_UwU\Moist_UwU\SomerenUI\bin\Debug\SomerenModel.pdb
+C:\Users\hampi\OneDrive\Documents\GitHub\Database Project Term 3\Moist_UwU\Moist_UwU\SomerenUI\obj\Debug\SomerenUI.csprojAssemblyReference.cache
+C:\Users\hampi\OneDrive\Documents\GitHub\Database Project Term 3\Moist_UwU\Moist_UwU\SomerenUI\obj\Debug\SomerenUI.SomerenUI.resources
+C:\Users\hampi\OneDrive\Documents\GitHub\Database Project Term 3\Moist_UwU\Moist_UwU\SomerenUI\obj\Debug\SomerenUI.Properties.Resources.resources
+C:\Users\hampi\OneDrive\Documents\GitHub\Database Project Term 3\Moist_UwU\Moist_UwU\SomerenUI\obj\Debug\SomerenUI.csproj.GenerateResource.cache
+C:\Users\hampi\OneDrive\Documents\GitHub\Database Project Term 3\Moist_UwU\Moist_UwU\SomerenUI\obj\Debug\SomerenUI.csproj.CopyComplete
+C:\Users\hampi\OneDrive\Documents\GitHub\Database Project Term 3\Moist_UwU\Moist_UwU\SomerenUI\obj\Debug\SomerenUI.exe
+C:\Users\hampi\OneDrive\Documents\GitHub\Database Project Term 3\Moist_UwU\Moist_UwU\SomerenUI\obj\Debug\SomerenUI.pdb

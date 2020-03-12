@@ -49,3 +49,14 @@ C:\Users\wslo0\OneDrive\Documents\School\moist uwu\Moist_UwU\Moist_UwU\SomerenLo
 C:\Users\wslo0\OneDrive\Documents\School\moist uwu\Moist_UwU\Moist_UwU\SomerenLogic\obj\Debug\SomerenLogic.csproj.CopyComplete
 C:\Users\wslo0\OneDrive\Documents\School\moist uwu\Moist_UwU\Moist_UwU\SomerenLogic\obj\Debug\SomerenLogic.dll
 C:\Users\wslo0\OneDrive\Documents\School\moist uwu\Moist_UwU\Moist_UwU\SomerenLogic\obj\Debug\SomerenLogic.pdb
+C:\Users\hampi\OneDrive\Documents\GitHub\Database Project Term 3\Moist_UwU\Moist_UwU\SomerenLogic\bin\Debug\SomerenLogic.dll
+C:\Users\hampi\OneDrive\Documents\GitHub\Database Project Term 3\Moist_UwU\Moist_UwU\SomerenLogic\bin\Debug\SomerenLogic.pdb
+C:\Users\hampi\OneDrive\Documents\GitHub\Database Project Term 3\Moist_UwU\Moist_UwU\SomerenLogic\bin\Debug\SomerenDAL.dll
+C:\Users\hampi\OneDrive\Documents\GitHub\Database Project Term 3\Moist_UwU\Moist_UwU\SomerenLogic\bin\Debug\SomerenModel.dll
+C:\Users\hampi\OneDrive\Documents\GitHub\Database Project Term 3\Moist_UwU\Moist_UwU\SomerenLogic\bin\Debug\SomerenDAL.pdb
+C:\Users\hampi\OneDrive\Documents\GitHub\Database Project Term 3\Moist_UwU\Moist_UwU\SomerenLogic\bin\Debug\SomerenDAL.dll.config
+C:\Users\hampi\OneDrive\Documents\GitHub\Database Project Term 3\Moist_UwU\Moist_UwU\SomerenLogic\bin\Debug\SomerenModel.pdb
+C:\Users\hampi\OneDrive\Documents\GitHub\Database Project Term 3\Moist_UwU\Moist_UwU\SomerenLogic\obj\Debug\SomerenLogic.csprojAssemblyReference.cache
+C:\Users\hampi\OneDrive\Documents\GitHub\Database Project Term 3\Moist_UwU\Moist_UwU\SomerenLogic\obj\Debug\SomerenLogic.csproj.CopyComplete
+C:\Users\hampi\OneDrive\Documents\GitHub\Database Project Term 3\Moist_UwU\Moist_UwU\SomerenLogic\obj\Debug\SomerenLogic.dll
+C:\Users\hampi\OneDrive\Documents\GitHub\Database Project Term 3\Moist_UwU\Moist_UwU\SomerenLogic\obj\Debug\SomerenLogic.pdb
