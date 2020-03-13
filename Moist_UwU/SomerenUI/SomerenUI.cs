@@ -123,7 +123,7 @@ namespace SomerenUI
             lv.Items.Clear();
             foreach (Student s in stuList)
             {
-                var row = new string[] { s.Number.ToString(), s.Name, s.BirthDate.Date.ToString("dd/MM/yyyy") };
+                var row = new string[] { s.Number.ToString(), s.FirstName, s.LastName, s.phoneNumber};
                 var lvi = new ListViewItem(row);
                 lv.Items.Add(lvi);
             }
