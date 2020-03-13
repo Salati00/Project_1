@@ -84,15 +84,8 @@ namespace SomerenUI
                 SomerenLogic.Lecturer_Service lecService = new SomerenLogic.Lecturer_Service();
                 List<Teacher> lecList = lecService.GetTeachers();
 
-                // clear the listview before filling it again
-                listViewRooms.Clear();
+                ListViewLecPrint(listView_Lec, lecList);
 
-                foreach (SomerenModel.Teacher l in lecList)
-                {
-
-                    ListViewItem li = new ListViewItem($"Lecturer ID: {l.Number}, Lecturer Name: {l.Name}");
-                    listView_Lec.Items.Add(li);
-                }
             }
             else if (panelName == "Rooms")
             {
@@ -107,7 +100,7 @@ namespace SomerenUI
 
 
 
-                // fill the students listview within the students panel with a list of students
+                // fill the rooms listview within the rooms panel with a list of rooms
                 SomerenLogic.Room_Service roomService = new SomerenLogic.Room_Service();
                 List<Room> roomList = roomService.GetRooms();
 
@@ -120,6 +113,18 @@ namespace SomerenUI
                     ListViewItem li = new ListViewItem("Room number:"+r.Number.ToString() +", Capacity:"+ r.Capacity.ToString()+ ", Room type:"+ r.Type.ToString());
                     listViewRooms.Items.Add(li);
                 }
+            }
+        }
+
+        //Creating List view for teachers with 2 columns
+        public void ListViewLecPrint(ListView lv, List<Teacher> lecList)
+        {
+            lv.Items.Clear();
+            foreach (Teacher t in lecList)
+            {
+                var row = new string[] { t.Number.ToString(), t.Name };
+                var lvi = new ListViewItem(row);
+                lv.Items.Add(lvi);
             }
         }
 
