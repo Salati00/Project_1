@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SomerenDAL;
 
 
 namespace SomerenUI
@@ -18,6 +19,10 @@ namespace SomerenUI
         public SomerenUI()
         {
             InitializeComponent();
+
+            //CODE TO INITIALIZE 225 rooms in the DB
+            /*Room_DAO ndaokjsfnewsi = new Room_DAO();
+            ndaokjsfnewsi.InitializeRooms();*/
         }
 
         private void SomerenUI_Load(object sender, EventArgs e)
@@ -57,15 +62,7 @@ namespace SomerenUI
                 SomerenLogic.Student_Service studService = new SomerenLogic.Student_Service();
                 List<Student> studentList = studService.GetStudents();
 
-                // clear the listview before filling it again
-                listViewStudents.Clear();
-
-                foreach (SomerenModel.Student s in studentList)
-                {
-
-                    ListViewItem li = new ListViewItem(s.Name);
-                    listViewStudents.Items.Add(li);
-                }
+                ListViewStuPrint(listViewStudents, studentList);
             }
             else if (panelName == "Lecturer")
             {
@@ -104,15 +101,7 @@ namespace SomerenUI
                 SomerenLogic.Room_Service roomService = new SomerenLogic.Room_Service();
                 List<Room> roomList = roomService.GetRooms();
 
-                // clear the listview before filling it again
-                listViewRooms.Clear();
-
-                foreach (SomerenModel.Room r in roomList)
-                {
-
-                    ListViewItem li = new ListViewItem("Room number:"+r.Number.ToString() +", Capacity:"+ r.Capacity.ToString()+ ", Room type:"+ r.Type.ToString());
-                    listViewRooms.Items.Add(li);
-                }
+                ListViewRoomPrint(listViewRooms, roomList);
             }
         }
 
@@ -126,6 +115,41 @@ namespace SomerenUI
                 var lvi = new ListViewItem(row);
                 lv.Items.Add(lvi);
             }
+        }
+
+        //Creating List view for students with 2 columns
+        public void ListViewStuPrint(ListView lv, List<Student> stuList)
+        {
+            lv.Items.Clear();
+            foreach (Student s in stuList)
+            {
+                var row = new string[] { s.Number.ToString(), s.Name, s.BirthDate.Date.ToString("dd/MM/yyyy") };
+                var lvi = new ListViewItem(row);
+                lv.Items.Add(lvi);
+            }
+        }
+
+        //Creating List view for rooms 
+        public void ListViewRoomPrint(ListView lv, List<Room> rooms)
+        {
+
+            lv.Items.Clear();
+            string typename = "";
+            foreach (Room r in rooms)
+            {
+                if (r.Type)
+                {
+                    typename = "Student Room";
+                }
+                else
+                {
+                    typename = "Teacher Room";
+                }
+                var row = new string[] { r.Number.ToString(), r.Capacity.ToString(), typename };
+                var lvi = new ListViewItem(row);
+                lv.Items.Add(lvi);
+            }
+            
         }
 
         private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)

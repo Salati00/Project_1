@@ -101,5 +101,28 @@ namespace SomerenDAL
             }
             return dataTable;
         }
+
+        /* For Insert Queries */
+        public void ExecuteInsertQuery(String query, params SqlParameter[] sqlParameters)
+        {
+            SqlCommand command = new SqlCommand();
+
+            try
+            {
+                command.Connection = OpenConnection();
+                command.CommandText = query;
+                command.Parameters.AddRange(sqlParameters);
+                command.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                // Print.ErrorLog(e);
+                throw;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
     }
 }

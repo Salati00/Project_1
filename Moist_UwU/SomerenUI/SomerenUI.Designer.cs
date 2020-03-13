@@ -92,7 +92,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1595, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1358, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -103,53 +103,53 @@
             this.toolStripSeparator1,
             this.exitToolStripMenuItem});
             this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
-            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(100, 26);
+            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(100, 24);
             this.dashboardToolStripMenuItem.Text = "Application";
             this.dashboardToolStripMenuItem.Click += new System.EventHandler(this.dashboardToolStripMenuItem_Click);
             // 
             // dashboardToolStripMenuItem1
             // 
             this.dashboardToolStripMenuItem1.Name = "dashboardToolStripMenuItem1";
-            this.dashboardToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.dashboardToolStripMenuItem1.Size = new System.Drawing.Size(165, 26);
             this.dashboardToolStripMenuItem1.Text = "Dashboard";
             this.dashboardToolStripMenuItem1.Click += new System.EventHandler(this.dashboardToolStripMenuItem1_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(221, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(162, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(165, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // studentsToolStripMenuItem
             // 
             this.studentsToolStripMenuItem.Name = "studentsToolStripMenuItem";
-            this.studentsToolStripMenuItem.Size = new System.Drawing.Size(80, 26);
+            this.studentsToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
             this.studentsToolStripMenuItem.Text = "Students";
             this.studentsToolStripMenuItem.Click += new System.EventHandler(this.studentsToolStripMenuItem_Click);
             // 
             // lecturersToolStripMenuItem
             // 
             this.lecturersToolStripMenuItem.Name = "lecturersToolStripMenuItem";
-            this.lecturersToolStripMenuItem.Size = new System.Drawing.Size(82, 26);
+            this.lecturersToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
             this.lecturersToolStripMenuItem.Text = "Lecturers";
             this.lecturersToolStripMenuItem.Click += new System.EventHandler(this.lecturersToolStripMenuItem_Click);
             // 
             // activitiesToolStripMenuItem
             // 
             this.activitiesToolStripMenuItem.Name = "activitiesToolStripMenuItem";
-            this.activitiesToolStripMenuItem.Size = new System.Drawing.Size(83, 26);
+            this.activitiesToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
             this.activitiesToolStripMenuItem.Text = "Activities";
             // 
             // roomsToolStripMenuItem
             // 
             this.roomsToolStripMenuItem.Name = "roomsToolStripMenuItem";
-            this.roomsToolStripMenuItem.Size = new System.Drawing.Size(69, 26);
+            this.roomsToolStripMenuItem.Size = new System.Drawing.Size(69, 24);
             this.roomsToolStripMenuItem.Text = "Rooms";
             this.roomsToolStripMenuItem.Click += new System.EventHandler(this.roomsToolStripMenuItem_Click);
             // 
@@ -197,18 +197,22 @@
             this.listViewStudents.Size = new System.Drawing.Size(1020, 377);
             this.listViewStudents.TabIndex = 5;
             this.listViewStudents.UseCompatibleStateImageBehavior = false;
+            this.listViewStudents.View = System.Windows.Forms.View.Details;
             // 
             // studentID
             // 
             this.studentID.Text = "ID";
+            this.studentID.Width = 200;
             // 
             // studentName
             // 
             this.studentName.Text = "Name";
+            this.studentName.Width = 200;
             // 
             // studentDOB
             // 
             this.studentDOB.Text = "Date of Birth";
+            this.studentDOB.Width = 200;
             // 
             // pictureBox1
             // 
@@ -268,25 +272,29 @@
             this.listViewRooms.Size = new System.Drawing.Size(1020, 377);
             this.listViewRooms.TabIndex = 5;
             this.listViewRooms.UseCompatibleStateImageBehavior = false;
+            this.listViewRooms.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "ID";
+            this.columnHeader1.Text = "Room Number";
+            this.columnHeader1.Width = 200;
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "Name";
+            this.columnHeader2.Text = "Room Capacity";
+            this.columnHeader2.Width = 200;
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "Date of Birth";
+            this.columnHeader3.Text = "Room Type";
+            this.columnHeader3.Width = 200;
             // 
             // pnl_Rooms
             // 
             this.pnl_Rooms.Controls.Add(this.listViewRooms);
             this.pnl_Rooms.Controls.Add(this.pictureBox2);
             this.pnl_Rooms.Controls.Add(this.label1);
-            this.pnl_Rooms.Location = new System.Drawing.Point(12, 30);
+            this.pnl_Rooms.Location = new System.Drawing.Point(11, 33);
             this.pnl_Rooms.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_Rooms.Name = "pnl_Rooms";
             this.pnl_Rooms.Size = new System.Drawing.Size(1251, 574);
@@ -296,7 +304,7 @@
             // 
             this.pnl_Lec.Controls.Add(this.lbl_Lec);
             this.pnl_Lec.Controls.Add(this.listView_Lec);
-            this.pnl_Lec.Location = new System.Drawing.Point(19, 30);
+            this.pnl_Lec.Location = new System.Drawing.Point(7, 37);
             this.pnl_Lec.Name = "pnl_Lec";
             this.pnl_Lec.Size = new System.Drawing.Size(1070, 570);
             this.pnl_Lec.TabIndex = 6;
@@ -341,9 +349,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1595, 833);
-            this.Controls.Add(this.pnl_Lec);
+            this.ClientSize = new System.Drawing.Size(1358, 616);
             this.Controls.Add(this.pnl_Rooms);
+            this.Controls.Add(this.pnl_Lec);
             this.Controls.Add(this.pnl_Students);
             this.Controls.Add(this.pnl_Dashboard);
             this.Controls.Add(this.menuStrip1);

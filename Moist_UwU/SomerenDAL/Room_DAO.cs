@@ -14,10 +14,9 @@ namespace SomerenDAL
         public List<Room> Db_Get_All_Rooms()
         {
 
-            string query = "SELECT room_id, room_capacity, room_type FROM [rooms]";
+            string query = "SELECT room_id, room_capacity, room_type FROM [rooms] WHERE room_id > 200 AND room_id < 226";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
-
 
         }
 
@@ -46,6 +45,22 @@ namespace SomerenDAL
                 Rooms.Add(room);
             }
             return Rooms;
+        }
+
+        /* Enters 225 random rooms into the database*/
+        public void InitializeRooms()
+        {
+            string query = "INSERT INTO rooms (room_capacity,room_type) VALUES (@cap,@type)";
+            Random rnd = new Random();
+
+            for (int i = 0; i < 225; i++)
+            {
+                SqlParameter[] sqlParameters = new SqlParameter[2];
+                int r = rnd.Next(1, 4) * 5;
+                sqlParameters[0] = new SqlParameter("@cap", r.ToString());
+                sqlParameters[1] = new SqlParameter("@type", ((rnd.Next(1, 3) == 1) ? "st" : "te"));
+                base.ExecuteInsertQuery(query, sqlParameters);
+            }
         }
 
     }
