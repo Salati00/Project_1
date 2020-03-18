@@ -61,6 +61,14 @@
             this.listView_Lec = new System.Windows.Forms.ListView();
             this.colId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Pnl_Activities = new System.Windows.Forms.Panel();
+            this.Lst_Activities = new System.Windows.Forms.ListView();
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.Lbl_Activities = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.img_Dashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnl_Dashboard.SuspendLayout();
@@ -69,6 +77,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnl_Rooms.SuspendLayout();
             this.pnl_Lec.SuspendLayout();
+            this.Pnl_Activities.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // img_Dashboard
@@ -92,7 +102,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1018, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1165, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -145,6 +155,7 @@
             this.activitiesToolStripMenuItem.Name = "activitiesToolStripMenuItem";
             this.activitiesToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.activitiesToolStripMenuItem.Text = "Activities";
+            this.activitiesToolStripMenuItem.Click += new System.EventHandler(this.activitiesToolStripMenuItem_Click);
             // 
             // roomsToolStripMenuItem
             // 
@@ -176,7 +187,7 @@
             this.pnl_Students.Controls.Add(this.listViewStudents);
             this.pnl_Students.Controls.Add(this.pictureBox1);
             this.pnl_Students.Controls.Add(this.lbl_Students);
-            this.pnl_Students.Location = new System.Drawing.Point(12, 24);
+            this.pnl_Students.Location = new System.Drawing.Point(9, 22);
             this.pnl_Students.Name = "pnl_Students";
             this.pnl_Students.Size = new System.Drawing.Size(938, 466);
             this.pnl_Students.TabIndex = 4;
@@ -291,7 +302,7 @@
             this.pnl_Rooms.Controls.Add(this.listViewRooms);
             this.pnl_Rooms.Controls.Add(this.pictureBox2);
             this.pnl_Rooms.Controls.Add(this.label1);
-            this.pnl_Rooms.Location = new System.Drawing.Point(8, 27);
+            this.pnl_Rooms.Location = new System.Drawing.Point(6, 22);
             this.pnl_Rooms.Name = "pnl_Rooms";
             this.pnl_Rooms.Size = new System.Drawing.Size(938, 466);
             this.pnl_Rooms.TabIndex = 6;
@@ -300,7 +311,7 @@
             // 
             this.pnl_Lec.Controls.Add(this.lbl_Lec);
             this.pnl_Lec.Controls.Add(this.listView_Lec);
-            this.pnl_Lec.Location = new System.Drawing.Point(5, 30);
+            this.pnl_Lec.Location = new System.Drawing.Point(7, 24);
             this.pnl_Lec.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_Lec.Name = "pnl_Lec";
             this.pnl_Lec.Size = new System.Drawing.Size(802, 463);
@@ -340,11 +351,77 @@
             this.colName.Text = "Name";
             this.colName.Width = 200;
             // 
+            // Pnl_Activities
+            // 
+            this.Pnl_Activities.Controls.Add(this.Lst_Activities);
+            this.Pnl_Activities.Controls.Add(this.pictureBox3);
+            this.Pnl_Activities.Controls.Add(this.Lbl_Activities);
+            this.Pnl_Activities.Location = new System.Drawing.Point(9, 24);
+            this.Pnl_Activities.Name = "Pnl_Activities";
+            this.Pnl_Activities.Size = new System.Drawing.Size(938, 466);
+            this.Pnl_Activities.TabIndex = 6;
+            // 
+            // Lst_Activities
+            // 
+            this.Lst_Activities.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6,
+            this.columnHeader7});
+            this.Lst_Activities.HideSelection = false;
+            this.Lst_Activities.Location = new System.Drawing.Point(16, 42);
+            this.Lst_Activities.Name = "Lst_Activities";
+            this.Lst_Activities.Size = new System.Drawing.Size(766, 307);
+            this.Lst_Activities.TabIndex = 5;
+            this.Lst_Activities.UseCompatibleStateImageBehavior = false;
+            this.Lst_Activities.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "ID";
+            this.columnHeader4.Width = 200;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "First Name";
+            this.columnHeader5.Width = 200;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Last Name";
+            this.columnHeader6.Width = 200;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Phone Number";
+            this.columnHeader7.Width = 200;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::SomerenUI.Properties.Resources.someren;
+            this.pictureBox3.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.InitialImage")));
+            this.pictureBox3.Location = new System.Drawing.Point(805, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(130, 123);
+            this.pictureBox3.TabIndex = 0;
+            this.pictureBox3.TabStop = false;
+            // 
+            // Lbl_Activities
+            // 
+            this.Lbl_Activities.AutoSize = true;
+            this.Lbl_Activities.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Activities.Location = new System.Drawing.Point(10, 10);
+            this.Lbl_Activities.Name = "Lbl_Activities";
+            this.Lbl_Activities.Size = new System.Drawing.Size(107, 29);
+            this.Lbl_Activities.TabIndex = 3;
+            this.Lbl_Activities.Text = "Activities";
+            // 
             // SomerenUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1018, 500);
+            this.ClientSize = new System.Drawing.Size(1165, 500);
+            this.Controls.Add(this.Pnl_Activities);
             this.Controls.Add(this.pnl_Rooms);
             this.Controls.Add(this.pnl_Lec);
             this.Controls.Add(this.pnl_Students);
@@ -369,6 +446,9 @@
             this.pnl_Rooms.PerformLayout();
             this.pnl_Lec.ResumeLayout(false);
             this.pnl_Lec.PerformLayout();
+            this.Pnl_Activities.ResumeLayout(false);
+            this.Pnl_Activities.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -408,6 +488,14 @@
         private System.Windows.Forms.ColumnHeader colId;
         private System.Windows.Forms.ColumnHeader colName;
         private System.Windows.Forms.ColumnHeader studentPhoneNumber;
+        private System.Windows.Forms.Panel Pnl_Activities;
+        private System.Windows.Forms.ListView Lst_Activities;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label Lbl_Activities;
     }
 }
 

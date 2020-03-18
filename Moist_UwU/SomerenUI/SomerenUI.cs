@@ -20,9 +20,9 @@ namespace SomerenUI
         {
             InitializeComponent();
 
-            //CODE TO INITIALIZE 225 rooms in the DB
-            /*Room_DAO ndaokjsfnewsi = new Room_DAO();
-            ndaokjsfnewsi.InitializeRooms();*/
+            //CODE TO INITIALIZE 225 rooms in the DB || NEVER CALL AGAIN UNLESS NECESSARY
+            /*Room_DAO r = new Room_DAO();
+            r.InitializeRooms();*/
         }
 
         private void SomerenUI_Load(object sender, EventArgs e)
@@ -30,16 +30,22 @@ namespace SomerenUI
             showPanel("Dashboard");
         }
 
+        private void HideAll()
+        {
+            pnl_Students.Hide();
+            pnl_Rooms.Hide();
+            pnl_Lec.Hide();
+            Pnl_Activities.Hide();
+            pnl_Dashboard.Hide();
+            img_Dashboard.Hide();
+        }
+
         private void showPanel(string panelName)
         {
 
             if(panelName == "Dashboard")
             {
-
-                // hide all other panels
-                pnl_Students.Hide();
-                pnl_Rooms.Hide();
-                pnl_Lec.Hide();
+                HideAll();
 
                 // show dashboard
                 pnl_Dashboard.Show();
@@ -47,38 +53,26 @@ namespace SomerenUI
             }
             else if(panelName == "Students")
             {
-                // hide all other panels
-                pnl_Dashboard.Hide();
-                img_Dashboard.Hide();
-                pnl_Lec.Hide();
-                pnl_Rooms.Hide();
+                HideAll();
 
                 // show students
                 pnl_Students.Show();
 
-                
-
                 // fill the students listview within the students panel with a list of students
-                SomerenLogic.Student_Service studService = new SomerenLogic.Student_Service();
+                Student_Service studService = new Student_Service();
                 List<Student> studentList = studService.GetStudents();
 
                 ListViewStuPrint(listViewStudents, studentList);
             }
             else if (panelName == "Lecturer")
             {
-                // hide all other panels
-                pnl_Dashboard.Hide();
-                img_Dashboard.Hide();
-                pnl_Students.Hide();
-                pnl_Rooms.Hide();
+                HideAll();
 
                 // show rooms
                 pnl_Lec.Show();
 
-
-
                 // fill the lecturer listview within the lectuer panel with a list of lecturers
-                SomerenLogic.Lecturer_Service lecService = new SomerenLogic.Lecturer_Service();
+                Lecturer_Service lecService = new Lecturer_Service();
                 List<Teacher> lecList = lecService.GetTeachers();
 
                 ListViewLecPrint(listView_Lec, lecList);
@@ -86,19 +80,13 @@ namespace SomerenUI
             }
             else if (panelName == "Rooms")
             {
-                // hide all other panels
-                pnl_Dashboard.Hide();
-                img_Dashboard.Hide();
-                pnl_Students.Hide();
-                pnl_Lec.Hide();
+                HideAll();
 
                 // show rooms
                 pnl_Rooms.Show();
 
-
-
                 // fill the rooms listview within the rooms panel with a list of rooms
-                SomerenLogic.Room_Service roomService = new SomerenLogic.Room_Service();
+                Room_Service roomService = new Room_Service();
                 List<Room> roomList = roomService.GetRooms();
 
                 ListViewRoomPrint(listViewRooms, roomList);
@@ -186,6 +174,11 @@ namespace SomerenUI
         private void lecturersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             showPanel("Lecturer");
+        }
+
+        private void activitiesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showPanel("Activities");
         }
     }
 }

@@ -47,7 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Print.cs" />
     <Compile Include="SomerenUI.cs">
       <SubType>Form</SubType>
     </Compile>
