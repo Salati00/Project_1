@@ -3,6 +3,7 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Data;
 
+
 namespace SomerenDAL
 {
     public abstract class Base
@@ -41,8 +42,7 @@ namespace SomerenDAL
             }
             catch (Exception ex)
             {
-                //Print.ErrorLog(e);
-                throw;
+                throw new Exception(ex.Message);
             }
         }
 

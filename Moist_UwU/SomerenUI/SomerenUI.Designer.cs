@@ -46,6 +46,7 @@
             this.studentID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.studentName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.studentLastName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.studentPhoneNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_Students = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -60,7 +61,6 @@
             this.listView_Lec = new System.Windows.Forms.ListView();
             this.colId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.studentPhoneNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.img_Dashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnl_Dashboard.SuspendLayout();
@@ -211,6 +211,11 @@
             this.studentLastName.Text = "Last Name";
             this.studentLastName.Width = 200;
             // 
+            // studentPhoneNumber
+            // 
+            this.studentPhoneNumber.Text = "Phone Number";
+            this.studentPhoneNumber.Width = 200;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::SomerenUI.Properties.Resources.someren;
@@ -296,7 +301,7 @@
             this.pnl_Lec.Controls.Add(this.lbl_Lec);
             this.pnl_Lec.Controls.Add(this.listView_Lec);
             this.pnl_Lec.Location = new System.Drawing.Point(5, 30);
-            this.pnl_Lec.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnl_Lec.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_Lec.Name = "pnl_Lec";
             this.pnl_Lec.Size = new System.Drawing.Size(802, 463);
             this.pnl_Lec.TabIndex = 6;
@@ -335,11 +340,6 @@
             this.colName.Text = "Name";
             this.colName.Width = 200;
             // 
-            // studentPhoneNumber
-            // 
-            this.studentPhoneNumber.Text = "Phone Number";
-            this.studentPhoneNumber.Width = 200;
-            // 
             // SomerenUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -354,7 +354,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "SomerenUI";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Text = "SomerenApp";
+            this.Text = "Someren";
             this.Load += new System.EventHandler(this.SomerenUI_Load);
             ((System.ComponentModel.ISupportInitialize)(this.img_Dashboard)).EndInit();
             this.menuStrip1.ResumeLayout(false);
