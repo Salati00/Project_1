@@ -39,6 +39,7 @@ namespace SomerenUI
             pnl_Dashboard.Hide();
             img_Dashboard.Hide();
             pnl_Supplies.Hide();
+            pnl_CashRegister.Hide();
         }
 
         private void showPanel(string panelName)
@@ -111,6 +112,39 @@ namespace SomerenUI
 
                 
             }
+            else if(panelName == "CashRegister")
+            {
+                HideAll();
+                pnl_CashRegister.Show();
+                FillRegistryStudents();
+                FillRegistryDrinks();
+            }
+        }
+
+        public void FillRegistryStudents()
+        {
+            Student_Service studService = new Student_Service();
+            List<Student> studentList = studService.GetStudents();
+            cmb_Student.DisplayMember = "FullName";
+            cmb_Student.ValueMember = "Number";
+            cmb_Student.DataSource = studentList;
+            /*
+            foreach (Student s in studentList)
+            {
+                cmb_Student.Items.Add(s.FirstName + " " + s.LastName);
+            }*/
+        }
+        public void FillRegistryDrinks()
+        {
+            Drink_Service drinkService = new Drink_Service();
+            List<Drink> DrinkList = drinkService.GetDrinks();
+            cmb_Drinks.DisplayMember = "Name";
+            cmb_Drinks.ValueMember = "ID";
+            cmb_Drinks.DataSource = DrinkList;
+            /*foreach (Drink d in DrinkList)
+            {
+                cmb_Drinks.Items.Add(d.Name);
+            }*/
         }
 
         //Creating List view for teachers with 2 columns
@@ -215,6 +249,19 @@ namespace SomerenUI
         private void drinkSuppliesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             showPanel("DrinkSup");
+        }
+
+        private void cashRegisterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showPanel("CashRegister");
+        }
+
+        private void btn_Checkout_Click(object sender, EventArgs e)
+        {
+            Registry_DAO dao = new Registry_DAO();
+            dao.InsertSale(Convert.ToInt32(cmb_Student.SelectedValue),Convert.ToInt32(cmb_Drinks.SelectedValue));
+            cmb_Student.SelectedIndex = 0;
+            cmb_Drinks.SelectedIndex = 0;
         }
     }
 }

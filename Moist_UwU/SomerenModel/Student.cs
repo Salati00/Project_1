@@ -13,5 +13,12 @@ namespace SomerenModel
         public int Number { get; set; } 
         public string phoneNumber { get; set; }
 
+        public string FullName
+        {
+            get
+            {
+                return FirstName +" "+ LastName;
+            }
+        }
     }
 }
