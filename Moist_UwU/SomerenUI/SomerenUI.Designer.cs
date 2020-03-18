@@ -39,6 +39,7 @@
             this.lecturersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.activitiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.roomsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.drinkSuppliesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl_Dashboard = new System.Windows.Forms.Panel();
             this.lbl_Dashboard = new System.Windows.Forms.Label();
             this.pnl_Students = new System.Windows.Forms.Panel();
@@ -69,6 +70,16 @@
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.Lbl_Activities = new System.Windows.Forms.Label();
+            this.pnl_Supplies = new System.Windows.Forms.Panel();
+            this.Lst_Supplies = new System.Windows.Forms.ListView();
+            this.col_id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.col_cost = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.col_name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.col_stock = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.Lbl_Supplies = new System.Windows.Forms.Label();
+            this.col_sold = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.col_depleted = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.img_Dashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnl_Dashboard.SuspendLayout();
@@ -79,6 +90,8 @@
             this.pnl_Lec.SuspendLayout();
             this.Pnl_Activities.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.pnl_Supplies.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // img_Dashboard
@@ -98,7 +111,8 @@
             this.studentsToolStripMenuItem,
             this.lecturersToolStripMenuItem,
             this.activitiesToolStripMenuItem,
-            this.roomsToolStripMenuItem});
+            this.roomsToolStripMenuItem,
+            this.drinkSuppliesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
@@ -163,6 +177,13 @@
             this.roomsToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.roomsToolStripMenuItem.Text = "Rooms";
             this.roomsToolStripMenuItem.Click += new System.EventHandler(this.roomsToolStripMenuItem_Click);
+            // 
+            // drinkSuppliesToolStripMenuItem
+            // 
+            this.drinkSuppliesToolStripMenuItem.Name = "drinkSuppliesToolStripMenuItem";
+            this.drinkSuppliesToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
+            this.drinkSuppliesToolStripMenuItem.Text = "Drink Supplies";
+            this.drinkSuppliesToolStripMenuItem.Click += new System.EventHandler(this.drinkSuppliesToolStripMenuItem_Click);
             // 
             // pnl_Dashboard
             // 
@@ -416,11 +437,89 @@
             this.Lbl_Activities.TabIndex = 3;
             this.Lbl_Activities.Text = "Activities";
             // 
+            // pnl_Supplies
+            // 
+            this.pnl_Supplies.Controls.Add(this.Lst_Supplies);
+            this.pnl_Supplies.Controls.Add(this.pictureBox4);
+            this.pnl_Supplies.Controls.Add(this.Lbl_Supplies);
+            this.pnl_Supplies.Location = new System.Drawing.Point(3, 25);
+            this.pnl_Supplies.Name = "pnl_Supplies";
+            this.pnl_Supplies.Size = new System.Drawing.Size(938, 466);
+            this.pnl_Supplies.TabIndex = 7;
+            // 
+            // Lst_Supplies
+            // 
+            this.Lst_Supplies.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.col_id,
+            this.col_cost,
+            this.col_name,
+            this.col_stock,
+            this.col_sold,
+            this.col_depleted});
+            this.Lst_Supplies.HideSelection = false;
+            this.Lst_Supplies.Location = new System.Drawing.Point(16, 42);
+            this.Lst_Supplies.Name = "Lst_Supplies";
+            this.Lst_Supplies.Size = new System.Drawing.Size(766, 307);
+            this.Lst_Supplies.TabIndex = 5;
+            this.Lst_Supplies.UseCompatibleStateImageBehavior = false;
+            this.Lst_Supplies.View = System.Windows.Forms.View.Details;
+            // 
+            // col_id
+            // 
+            this.col_id.Text = "ID";
+            this.col_id.Width = 50;
+            // 
+            // col_cost
+            // 
+            this.col_cost.Text = "Price";
+            this.col_cost.Width = 50;
+            // 
+            // col_name
+            // 
+            this.col_name.Text = "Name";
+            this.col_name.Width = 200;
+            // 
+            // col_stock
+            // 
+            this.col_stock.Text = "stock";
+            this.col_stock.Width = 100;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::SomerenUI.Properties.Resources.someren;
+            this.pictureBox4.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.InitialImage")));
+            this.pictureBox4.Location = new System.Drawing.Point(805, 0);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(130, 123);
+            this.pictureBox4.TabIndex = 0;
+            this.pictureBox4.TabStop = false;
+            // 
+            // Lbl_Supplies
+            // 
+            this.Lbl_Supplies.AutoSize = true;
+            this.Lbl_Supplies.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Supplies.Location = new System.Drawing.Point(10, 10);
+            this.Lbl_Supplies.Name = "Lbl_Supplies";
+            this.Lbl_Supplies.Size = new System.Drawing.Size(170, 29);
+            this.Lbl_Supplies.TabIndex = 3;
+            this.Lbl_Supplies.Text = "Drink Supplies";
+            // 
+            // col_sold
+            // 
+            this.col_sold.Text = "Amount Sold";
+            this.col_sold.Width = 100;
+            // 
+            // col_depleted
+            // 
+            this.col_depleted.Text = "Stock warning";
+            this.col_depleted.Width = 150;
+            // 
             // SomerenUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1165, 500);
+            this.Controls.Add(this.pnl_Supplies);
             this.Controls.Add(this.Pnl_Activities);
             this.Controls.Add(this.pnl_Rooms);
             this.Controls.Add(this.pnl_Lec);
@@ -449,6 +548,9 @@
             this.Pnl_Activities.ResumeLayout(false);
             this.Pnl_Activities.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.pnl_Supplies.ResumeLayout(false);
+            this.pnl_Supplies.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -496,6 +598,17 @@
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label Lbl_Activities;
+        private System.Windows.Forms.ToolStripMenuItem drinkSuppliesToolStripMenuItem;
+        private System.Windows.Forms.Panel pnl_Supplies;
+        private System.Windows.Forms.ListView Lst_Supplies;
+        private System.Windows.Forms.ColumnHeader col_id;
+        private System.Windows.Forms.ColumnHeader col_cost;
+        private System.Windows.Forms.ColumnHeader col_name;
+        private System.Windows.Forms.ColumnHeader col_stock;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label Lbl_Supplies;
+        private System.Windows.Forms.ColumnHeader col_sold;
+        private System.Windows.Forms.ColumnHeader col_depleted;
     }
 }
 

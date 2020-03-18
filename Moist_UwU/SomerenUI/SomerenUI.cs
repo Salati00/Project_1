@@ -38,6 +38,7 @@ namespace SomerenUI
             Pnl_Activities.Hide();
             pnl_Dashboard.Hide();
             img_Dashboard.Hide();
+            pnl_Supplies.Hide();
         }
 
         private void showPanel(string panelName)
@@ -91,6 +92,25 @@ namespace SomerenUI
 
                 ListViewRoomPrint(listViewRooms, roomList);
             }
+            else if (panelName == "DrinkSup")
+            {
+                HideAll();
+
+                pnl_Supplies.Show();
+
+                // fill the students listview within the students panel with a list of students
+                Drink_Service drinkService = new Drink_Service();
+                List<Drink> DrinkList = drinkService.GetDrinks();
+
+                ListViewStockPrint(Lst_Supplies, DrinkList);
+
+            }
+            else if(panelName == "Activities")
+            {
+                HideAll();
+
+                
+            }
         }
 
         //Creating List view for teachers with 2 columns
@@ -140,6 +160,18 @@ namespace SomerenUI
             
         }
 
+        public void ListViewStockPrint(ListView lv, List<Drink> drinks)
+        {
+            lv.Items.Clear();
+            foreach (Drink d in drinks)
+            {
+                var row = new string[] { d.ID.ToString(), d.Cost.ToString(), d.Name.ToString(), d.Stock.ToString(), d.Sold.ToString(), ((d.Stock < 10)? "Stock nearly depleted":"Stock Sufficient") };
+                var lvi = new ListViewItem(row);
+                lv.Items.Add(lvi);
+            }
+
+        }
+
         private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
         {
            //
@@ -154,7 +186,6 @@ namespace SomerenUI
         {
             showPanel("Dashboard");
         }
-
 
         private void img_Dashboard_Click(object sender, EventArgs e)
         {
@@ -179,6 +210,11 @@ namespace SomerenUI
         private void activitiesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             showPanel("Activities");
+        }
+
+        private void drinkSuppliesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showPanel("DrinkSup");
         }
     }
 }
