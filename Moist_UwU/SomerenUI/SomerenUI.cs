@@ -40,6 +40,7 @@ namespace SomerenUI
             img_Dashboard.Hide();
             pnl_Supplies.Hide();
             pnl_CashRegister.Hide();
+            pnl_RepRev.Hide();
         }
 
         private void showPanel(string panelName)
@@ -126,6 +127,13 @@ namespace SomerenUI
                 FillRegistryStudents();
                 FillRegistryDrinks();
                 Btn_Register_Checkout.Enabled = false;
+            }
+            else if (panelName == "RepRev")
+            {
+                HideAll();
+                pnl_RepRev.Show();
+                mcRev.MaxDate = DateTime.Today;
+                PrintReport();
             }
         }
 
@@ -255,16 +263,6 @@ namespace SomerenUI
             showPanel("Activities");
         }
 
-        private void drinkSuppliesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            showPanel("DrinkSup");
-        }
-
-        private void cashRegisterToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            showPanel("CashRegister");
-        }
-
         private void btn_Checkout_Click(object sender, EventArgs e)
         {
             Register_Service reg = new Register_Service();
@@ -347,6 +345,46 @@ namespace SomerenUI
         private void Lst_RegDrink_ItemCheck(object sender, ItemCheckedEventArgs e)
         {
             EnDisableRegistryButton(Lst_RegStu, Lst_RegDrink);
+        }
+
+        private void cashRegister1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showPanel("CashRegister");
+        }
+
+        private void drinkSupplies1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showPanel("DrinkSup");
+        }
+
+        private void reportRevenueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showPanel("RepRev");
+
+        }
+
+        private void btn_RepRev_Calc_Click(object sender, EventArgs e)
+        {
+            PrintReport(mcRev.SelectionStart, mcRev.SelectionEnd);
+        }
+
+        private void PrintReport(DateTime from, DateTime until)
+        {
+            lvRepRev.Items.Clear();
+            Report_Service service = new Report_Service();
+            Report report = service.GetReport(from, until);
+            var row = new string[] { report.Sales.ToString(), report.Turnover.ToString(), report.CustomerID.ToString() };
+            var lvi = new ListViewItem(row);
+            lvRepRev.Items.Add(lvi);
+        }
+        private void PrintReport()
+        {
+            lvRepRev.Items.Clear();
+            Report_Service service = new Report_Service();
+            Report report = service.GetReport();
+            var row = new string[] { report.Sales.ToString(), report.Turnover.ToString(), report.CustomerID.ToString() };
+            var lvi = new ListViewItem(row);
+            lvRepRev.Items.Add(lvi);
         }
     }
 }
