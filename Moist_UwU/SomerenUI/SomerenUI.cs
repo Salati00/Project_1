@@ -99,6 +99,13 @@ namespace SomerenUI
 
                 pnl_Supplies.Show();
 
+                Txt_Supplies_NewName.Enabled = false;
+                Txt_Supplies_NewStock.Enabled = false;
+                Btn_Supplies_Save.Enabled = false;
+                Txt_Supplies_Id.Text = string.Empty;
+                Txt_Supplies_NewName.Text = string.Empty;
+                Txt_Supplies_NewStock.Text = string.Empty;
+
                 // fill the students listview within the students panel with a list of students
                 Drink_Service drinkService = new Drink_Service();
                 List<Drink> DrinkList = drinkService.GetDrinks();
@@ -262,6 +269,42 @@ namespace SomerenUI
             dao.InsertSale(Convert.ToInt32(cmb_Student.SelectedValue),Convert.ToInt32(cmb_Drinks.SelectedValue));
             cmb_Student.SelectedIndex = 0;
             cmb_Drinks.SelectedIndex = 0;
+        }
+
+        //Event fired for changed index selection in Supplies ListView
+        private void Lst_Supplies_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ListView lsv = (ListView)sender;
+
+            if (lsv.SelectedItems.Count > 0)
+            {
+                ListViewItem item = lsv.SelectedItems[0];
+                Txt_Supplies_Id.Text = item.SubItems[0].Text;
+                Txt_Supplies_NewName.Text = item.SubItems[2].Text;
+                Txt_Supplies_NewStock.Text = item.SubItems[3].Text;
+
+                Txt_Supplies_NewName.Enabled = true;
+                Txt_Supplies_NewStock.Enabled = true;
+                Btn_Supplies_Save.Enabled = true;
+            }
+            else
+            {
+                Txt_Supplies_NewName.Text = string.Empty;
+                Txt_Supplies_NewStock.Text = string.Empty;
+                Txt_Supplies_Id.Text = string.Empty;
+
+                Txt_Supplies_NewName.Enabled = false;
+                Txt_Supplies_NewStock.Enabled = false;
+                Btn_Supplies_Save.Enabled = false;
+            }
+        }
+
+        //Event fired for button press in Supplies
+        private void Btn_Supplies_Save_Click(object sender, EventArgs e)
+        {
+            Drink_Service sv = new Drink_Service();
+            sv.UpdateDrink(Convert.ToInt32(Txt_Supplies_Id.Text), Txt_Supplies_NewName.Text, Convert.ToInt32(Txt_Supplies_NewStock.Text));
+            showPanel("DrinkSup");
         }
     }
 }

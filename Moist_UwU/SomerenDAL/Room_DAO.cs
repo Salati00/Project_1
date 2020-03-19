@@ -59,7 +59,7 @@ namespace SomerenDAL
                 int r = rnd.Next(1, 4) * 5;
                 sqlParameters[0] = new SqlParameter("@cap", r.ToString());
                 sqlParameters[1] = new SqlParameter("@type", ((rnd.Next(1, 3) == 1) ? "st" : "te"));
-                base.ExecuteInsertQuery(query, sqlParameters);
+                base.ExecuteNonQuery(query, sqlParameters);
             }
         }
 

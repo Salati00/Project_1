@@ -18,12 +18,12 @@ namespace SomerenDAL
 
             sqlParameters[0] = new SqlParameter("@stu", studentid.ToString());
             sqlParameters[1] = new SqlParameter("@drink", drinkid.ToString());
-            base.ExecuteInsertQuery(query, sqlParameters);
+            base.ExecuteNonQuery(query, sqlParameters);
             query = "UPDATE DRINKS SET stock = stock - 1, sold = sold + 1" +
                 " where drink_id = @id";
             sqlParameters = new SqlParameter[1];
             sqlParameters[0] = new SqlParameter("@id", drinkid.ToString());
-            base.ExecuteInsertQuery(query, sqlParameters);
+            base.ExecuteNonQuery(query, sqlParameters);
         }
 
     }

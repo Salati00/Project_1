@@ -103,7 +103,7 @@ namespace SomerenDAL
         }
 
         /* For Insert Queries */
-        public void ExecuteInsertQuery(String query, params SqlParameter[] sqlParameters)
+        public void ExecuteNonQuery(String query, params SqlParameter[] sqlParameters)
         {
             SqlCommand command = new SqlCommand();
 
@@ -124,5 +124,6 @@ namespace SomerenDAL
                 CloseConnection();
             }
         }
+
     }
 }
