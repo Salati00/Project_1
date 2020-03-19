@@ -135,11 +135,14 @@ namespace SomerenUI
             cmb_Student.DisplayMember = "FullName";
             cmb_Student.ValueMember = "Number";
             cmb_Student.DataSource = studentList;
-            /*
+
+            Lst_RegStu.Items.Clear();
             foreach (Student s in studentList)
             {
-                cmb_Student.Items.Add(s.FirstName + " " + s.LastName);
-            }*/
+                var row = new string[] { s.Number.ToString(), s.FullName };
+                var lvi = new ListViewItem(row);
+                Lst_RegStu.Items.Add(lvi);
+            }
         }
         public void FillRegistryDrinks()
         {
@@ -305,6 +308,20 @@ namespace SomerenUI
             Drink_Service sv = new Drink_Service();
             sv.UpdateDrink(Convert.ToInt32(Txt_Supplies_Id.Text), Txt_Supplies_NewName.Text, Convert.ToInt32(Txt_Supplies_NewStock.Text));
             showPanel("DrinkSup");
+        }
+
+        private void Lst_RegStu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ListView lsv = (ListView)sender;
+
+            if (lsv.SelectedItems.Count > 0)
+            {
+                
+            }
+            else
+            {
+                
+            }
         }
     }
 }
