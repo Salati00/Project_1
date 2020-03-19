@@ -125,6 +125,7 @@ namespace SomerenUI
                 pnl_CashRegister.Show();
                 FillRegistryStudents();
                 FillRegistryDrinks();
+                Btn_Register_Checkout.Enabled = false;
             }
         }
 
@@ -132,9 +133,6 @@ namespace SomerenUI
         {
             Student_Service studService = new Student_Service();
             List<Student> studentList = studService.GetStudents();
-            cmb_Student.DisplayMember = "FullName";
-            cmb_Student.ValueMember = "Number";
-            cmb_Student.DataSource = studentList;
 
             Lst_RegStu.Items.Clear();
             foreach (Student s in studentList)
@@ -146,15 +144,16 @@ namespace SomerenUI
         }
         public void FillRegistryDrinks()
         {
-            Drink_Service drinkService = new Drink_Service();
-            List<Drink> DrinkList = drinkService.GetDrinks();
-            cmb_Drinks.DisplayMember = "Name";
-            cmb_Drinks.ValueMember = "ID";
-            cmb_Drinks.DataSource = DrinkList;
-            /*foreach (Drink d in DrinkList)
+            Register_Service regServ = new Register_Service();
+            List<Drink> DrinkList = regServ.GetDrinks();
+
+            Lst_RegDrink.Items.Clear();
+            foreach (Drink d in DrinkList)
             {
-                cmb_Drinks.Items.Add(d.Name);
-            }*/
+                var row = new string[] { d.ID.ToString(), d.Name, d.Cost.ToString(), d.Stock.ToString() };
+                var lvi = new ListViewItem(row);
+                Lst_RegDrink.Items.Add(lvi);
+            }
         }
 
         //Creating List view for teachers with 2 columns
@@ -268,10 +267,16 @@ namespace SomerenUI
 
         private void btn_Checkout_Click(object sender, EventArgs e)
         {
-            Registry_DAO dao = new Registry_DAO();
-            dao.InsertSale(Convert.ToInt32(cmb_Student.SelectedValue),Convert.ToInt32(cmb_Drinks.SelectedValue));
-            cmb_Student.SelectedIndex = 0;
-            cmb_Drinks.SelectedIndex = 0;
+            Register_Service reg = new Register_Service();
+            ListViewItem stu = Lst_RegStu.SelectedItems[0];
+
+
+            foreach (ListViewItem item in Lst_RegDrink.CheckedItems)
+            {
+                reg.InsertSale(Convert.ToInt32(stu.SubItems[0].Text), Convert.ToInt32(item.SubItems[0].Text));
+            }
+
+            showPanel("CashRegister");
         }
 
         //Event fired for changed index selection in Supplies ListView
@@ -312,16 +317,36 @@ namespace SomerenUI
 
         private void Lst_RegStu_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ListView lsv = (ListView)sender;
+            EnDisableRegistryButton(Lst_RegStu, Lst_RegDrink);
+        }
 
-            if (lsv.SelectedItems.Count > 0)
+        private void EnDisableRegistryButton(ListView Students, ListView Drinks)
+        {
+            bool enable = false;
+            if (Students.SelectedItems.Count > 0)
             {
-                
+                enable = true;
             }
             else
             {
-                
+                enable = false;
             }
+
+            if (Drinks.CheckedItems.Count > 0 && enable)
+            {
+                enable = true;
+            }
+            else
+            {
+                enable = false;
+            }
+
+            Btn_Register_Checkout.Enabled = enable;
+        }
+
+        private void Lst_RegDrink_ItemCheck(object sender, ItemCheckedEventArgs e)
+        {
+            EnDisableRegistryButton(Lst_RegStu, Lst_RegDrink);
         }
     }
 }
