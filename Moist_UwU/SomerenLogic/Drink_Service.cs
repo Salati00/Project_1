@@ -40,5 +40,19 @@ namespace SomerenLogic
                 return false;
             }
         }
+
+        public bool AddDrink(string Name, int Stock, int Sold, int Price)
+        {
+            try
+            {
+                drinks_db.AddDrink(Name, Stock, Sold, Price);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                //throw new Exception("Someren couldn't connect to the database");
+                return false;
+            }
+        }
     }
 }

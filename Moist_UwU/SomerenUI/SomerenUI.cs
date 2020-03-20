@@ -100,12 +100,14 @@ namespace SomerenUI
 
                 pnl_Supplies.Show();
 
-                Txt_Supplies_NewName.Enabled = false;
-                Txt_Supplies_NewStock.Enabled = false;
+                //Txt_Supplies_NewName.Enabled = false;
+                //Txt_Supplies_NewStock.Enabled = false;
                 Btn_Supplies_Save.Enabled = false;
                 Txt_Supplies_Id.Text = string.Empty;
                 Txt_Supplies_NewName.Text = string.Empty;
                 Txt_Supplies_NewStock.Text = string.Empty;
+                Txt_Supplies_Price.Text = string.Empty;
+                Txt_Supplies_Sold.Text = string.Empty;
 
                 // fill the students listview within the students panel with a list of students
                 Drink_Service drinkService = new Drink_Service();
@@ -292,16 +294,27 @@ namespace SomerenUI
                 Txt_Supplies_NewName.Enabled = true;
                 Txt_Supplies_NewStock.Enabled = true;
                 Btn_Supplies_Save.Enabled = true;
+
+                Txt_Supplies_Price.Visible = false;
+                Txt_Supplies_Sold.Visible = false;
+                Lbl_Supplies_Price.Visible = false;
+                Lbl_Supplies_AmountSold.Visible = false;
+
+                Btn_Supplies_Save.Text = "Save Changes";
             }
             else
             {
                 Txt_Supplies_NewName.Text = string.Empty;
                 Txt_Supplies_NewStock.Text = string.Empty;
                 Txt_Supplies_Id.Text = string.Empty;
+                Txt_Supplies_Price.Text = "";
+                Txt_Supplies_Sold.Text = "";
 
-                Txt_Supplies_NewName.Enabled = false;
-                Txt_Supplies_NewStock.Enabled = false;
-                Btn_Supplies_Save.Enabled = false;
+                Txt_Supplies_Price.Visible = true;
+                Txt_Supplies_Sold.Visible = true;
+                Lbl_Supplies_Price.Visible = true;
+                Lbl_Supplies_AmountSold.Visible = true;
+                Btn_Supplies_Save.Text = "Add";
             }
         }
 
@@ -309,7 +322,10 @@ namespace SomerenUI
         private void Btn_Supplies_Save_Click(object sender, EventArgs e)
         {
             Drink_Service sv = new Drink_Service();
-            sv.UpdateDrink(Convert.ToInt32(Txt_Supplies_Id.Text), Txt_Supplies_NewName.Text, Convert.ToInt32(Txt_Supplies_NewStock.Text));
+            if (!Txt_Supplies_Price.Visible)
+                sv.UpdateDrink(Convert.ToInt32(Txt_Supplies_Id.Text), Txt_Supplies_NewName.Text, Convert.ToInt32(Txt_Supplies_NewStock.Text));
+            else
+                sv.AddDrink(Txt_Supplies_NewName.Text, Convert.ToInt32(Txt_Supplies_NewStock.Text), Convert.ToInt32(Txt_Supplies_Sold.Text), Convert.ToInt32(Txt_Supplies_Price.Text));
             showPanel("DrinkSup");
         }
 
@@ -385,6 +401,18 @@ namespace SomerenUI
             var row = new string[] { report.Sales.ToString(), report.Turnover.ToString(), report.CustomerID.ToString() };
             var lvi = new ListViewItem(row);
             lvRepRev.Items.Add(lvi);
+        }
+
+        private void Txt_Supplies_TextChanged(object sender, EventArgs e)
+        {
+            if(Txt_Supplies_NewName.Text != "" && Txt_Supplies_NewStock.Text != "" && Txt_Supplies_Price.Text != "" && Txt_Supplies_Sold.Text != "")
+            {
+                Btn_Supplies_Save.Enabled = true;
+            }
+            else
+            {
+                Btn_Supplies_Save.Enabled = false;
+            }
         }
     }
 }

@@ -74,6 +74,10 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.Lbl_Activities = new System.Windows.Forms.Label();
             this.pnl_Supplies = new System.Windows.Forms.Panel();
+            this.Lbl_Supplies_Price = new System.Windows.Forms.Label();
+            this.Txt_Supplies_Price = new System.Windows.Forms.TextBox();
+            this.Lbl_Supplies_AmountSold = new System.Windows.Forms.Label();
+            this.Txt_Supplies_Sold = new System.Windows.Forms.TextBox();
             this.Lbl_Supplies_Id = new System.Windows.Forms.Label();
             this.Txt_Supplies_Id = new System.Windows.Forms.TextBox();
             this.Btn_Supplies_Save = new System.Windows.Forms.Button();
@@ -228,21 +232,21 @@
             // cashRegister1ToolStripMenuItem
             // 
             this.cashRegister1ToolStripMenuItem.Name = "cashRegister1ToolStripMenuItem";
-            this.cashRegister1ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cashRegister1ToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.cashRegister1ToolStripMenuItem.Text = "Cash Register";
             this.cashRegister1ToolStripMenuItem.Click += new System.EventHandler(this.cashRegister1ToolStripMenuItem_Click);
             // 
             // drinkSupplies1ToolStripMenuItem
             // 
             this.drinkSupplies1ToolStripMenuItem.Name = "drinkSupplies1ToolStripMenuItem";
-            this.drinkSupplies1ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.drinkSupplies1ToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.drinkSupplies1ToolStripMenuItem.Text = "Drink Supplies";
             this.drinkSupplies1ToolStripMenuItem.Click += new System.EventHandler(this.drinkSupplies1ToolStripMenuItem_Click);
             // 
             // reportRevenueToolStripMenuItem
             // 
             this.reportRevenueToolStripMenuItem.Name = "reportRevenueToolStripMenuItem";
-            this.reportRevenueToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.reportRevenueToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.reportRevenueToolStripMenuItem.Text = "Report Revenue";
             this.reportRevenueToolStripMenuItem.Click += new System.EventHandler(this.reportRevenueToolStripMenuItem_Click);
             // 
@@ -394,7 +398,7 @@
             this.pnl_Lec.Controls.Add(this.lbl_Lec);
             this.pnl_Lec.Controls.Add(this.listView_Lec);
             this.pnl_Lec.Location = new System.Drawing.Point(7, 24);
-            this.pnl_Lec.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnl_Lec.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_Lec.Name = "pnl_Lec";
             this.pnl_Lec.Size = new System.Drawing.Size(802, 463);
             this.pnl_Lec.TabIndex = 6;
@@ -500,6 +504,10 @@
             // 
             // pnl_Supplies
             // 
+            this.pnl_Supplies.Controls.Add(this.Lbl_Supplies_Price);
+            this.pnl_Supplies.Controls.Add(this.Txt_Supplies_Price);
+            this.pnl_Supplies.Controls.Add(this.Lbl_Supplies_AmountSold);
+            this.pnl_Supplies.Controls.Add(this.Txt_Supplies_Sold);
             this.pnl_Supplies.Controls.Add(this.Lbl_Supplies_Id);
             this.pnl_Supplies.Controls.Add(this.Txt_Supplies_Id);
             this.pnl_Supplies.Controls.Add(this.Btn_Supplies_Save);
@@ -514,6 +522,40 @@
             this.pnl_Supplies.Name = "pnl_Supplies";
             this.pnl_Supplies.Size = new System.Drawing.Size(938, 466);
             this.pnl_Supplies.TabIndex = 7;
+            // 
+            // Lbl_Supplies_Price
+            // 
+            this.Lbl_Supplies_Price.AutoSize = true;
+            this.Lbl_Supplies_Price.Location = new System.Drawing.Point(302, 417);
+            this.Lbl_Supplies_Price.Name = "Lbl_Supplies_Price";
+            this.Lbl_Supplies_Price.Size = new System.Drawing.Size(31, 13);
+            this.Lbl_Supplies_Price.TabIndex = 16;
+            this.Lbl_Supplies_Price.Text = "Price";
+            // 
+            // Txt_Supplies_Price
+            // 
+            this.Txt_Supplies_Price.Location = new System.Drawing.Point(305, 394);
+            this.Txt_Supplies_Price.Name = "Txt_Supplies_Price";
+            this.Txt_Supplies_Price.Size = new System.Drawing.Size(106, 20);
+            this.Txt_Supplies_Price.TabIndex = 15;
+            this.Txt_Supplies_Price.TextChanged += new System.EventHandler(this.Txt_Supplies_TextChanged);
+            // 
+            // Lbl_Supplies_AmountSold
+            // 
+            this.Lbl_Supplies_AmountSold.AutoSize = true;
+            this.Lbl_Supplies_AmountSold.Location = new System.Drawing.Point(116, 417);
+            this.Lbl_Supplies_AmountSold.Name = "Lbl_Supplies_AmountSold";
+            this.Lbl_Supplies_AmountSold.Size = new System.Drawing.Size(67, 13);
+            this.Lbl_Supplies_AmountSold.TabIndex = 14;
+            this.Lbl_Supplies_AmountSold.Text = "Amount Sold";
+            // 
+            // Txt_Supplies_Sold
+            // 
+            this.Txt_Supplies_Sold.Location = new System.Drawing.Point(119, 394);
+            this.Txt_Supplies_Sold.Name = "Txt_Supplies_Sold";
+            this.Txt_Supplies_Sold.Size = new System.Drawing.Size(180, 20);
+            this.Txt_Supplies_Sold.TabIndex = 13;
+            this.Txt_Supplies_Sold.TextChanged += new System.EventHandler(this.Txt_Supplies_TextChanged);
             // 
             // Lbl_Supplies_Id
             // 
@@ -538,7 +580,7 @@
             this.Btn_Supplies_Save.Name = "Btn_Supplies_Save";
             this.Btn_Supplies_Save.Size = new System.Drawing.Size(208, 51);
             this.Btn_Supplies_Save.TabIndex = 10;
-            this.Btn_Supplies_Save.Text = "Save Changes";
+            this.Btn_Supplies_Save.Text = "Add";
             this.Btn_Supplies_Save.UseVisualStyleBackColor = true;
             this.Btn_Supplies_Save.Click += new System.EventHandler(this.Btn_Supplies_Save_Click);
             // 
@@ -557,6 +599,7 @@
             this.Txt_Supplies_NewStock.Name = "Txt_Supplies_NewStock";
             this.Txt_Supplies_NewStock.Size = new System.Drawing.Size(106, 20);
             this.Txt_Supplies_NewStock.TabIndex = 8;
+            this.Txt_Supplies_NewStock.TextChanged += new System.EventHandler(this.Txt_Supplies_TextChanged);
             // 
             // Lbl_Supplies_NewName
             // 
@@ -573,6 +616,7 @@
             this.Txt_Supplies_NewName.Name = "Txt_Supplies_NewName";
             this.Txt_Supplies_NewName.Size = new System.Drawing.Size(180, 20);
             this.Txt_Supplies_NewName.TabIndex = 6;
+            this.Txt_Supplies_NewName.TextChanged += new System.EventHandler(this.Txt_Supplies_TextChanged);
             // 
             // Lst_Supplies
             // 
@@ -652,7 +696,7 @@
             this.pnl_CashRegister.Controls.Add(this.label3);
             this.pnl_CashRegister.Controls.Add(this.pictureBox5);
             this.pnl_CashRegister.Controls.Add(this.label2);
-            this.pnl_CashRegister.Location = new System.Drawing.Point(2, 24);
+            this.pnl_CashRegister.Location = new System.Drawing.Point(3, 22);
             this.pnl_CashRegister.Name = "pnl_CashRegister";
             this.pnl_CashRegister.Size = new System.Drawing.Size(938, 466);
             this.pnl_CashRegister.TabIndex = 8;
@@ -675,7 +719,7 @@
             this.Lst_RegStu.FullRowSelect = true;
             this.Lst_RegStu.HideSelection = false;
             this.Lst_RegStu.Location = new System.Drawing.Point(24, 76);
-            this.Lst_RegStu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Lst_RegStu.Margin = new System.Windows.Forms.Padding(2);
             this.Lst_RegStu.Name = "Lst_RegStu";
             this.Lst_RegStu.Size = new System.Drawing.Size(232, 253);
             this.Lst_RegStu.TabIndex = 11;
@@ -703,7 +747,7 @@
             this.columnHeader10});
             this.Lst_RegDrink.HideSelection = false;
             this.Lst_RegDrink.Location = new System.Drawing.Point(278, 76);
-            this.Lst_RegDrink.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Lst_RegDrink.Margin = new System.Windows.Forms.Padding(2);
             this.Lst_RegDrink.Name = "Lst_RegDrink";
             this.Lst_RegDrink.Size = new System.Drawing.Size(384, 253);
             this.Lst_RegDrink.TabIndex = 10;
@@ -779,7 +823,7 @@
             this.pnl_RepRev.Controls.Add(this.mcRev);
             this.pnl_RepRev.Controls.Add(this.pictureBox6);
             this.pnl_RepRev.Controls.Add(this.lbl_RepRev);
-            this.pnl_RepRev.Location = new System.Drawing.Point(7, 21);
+            this.pnl_RepRev.Location = new System.Drawing.Point(3, 24);
             this.pnl_RepRev.Name = "pnl_RepRev";
             this.pnl_RepRev.Size = new System.Drawing.Size(938, 466);
             this.pnl_RepRev.TabIndex = 13;
@@ -787,7 +831,7 @@
             // btn_RepRev_Calc
             // 
             this.btn_RepRev_Calc.Location = new System.Drawing.Point(502, 275);
-            this.btn_RepRev_Calc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_RepRev_Calc.Margin = new System.Windows.Forms.Padding(2);
             this.btn_RepRev_Calc.Name = "btn_RepRev_Calc";
             this.btn_RepRev_Calc.Size = new System.Drawing.Size(197, 63);
             this.btn_RepRev_Calc.TabIndex = 18;
@@ -803,7 +847,7 @@
             this.NrOfCustomers});
             this.lvRepRev.HideSelection = false;
             this.lvRepRev.Location = new System.Drawing.Point(0, 269);
-            this.lvRepRev.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lvRepRev.Margin = new System.Windows.Forms.Padding(2);
             this.lvRepRev.Name = "lvRepRev";
             this.lvRepRev.Size = new System.Drawing.Size(438, 80);
             this.lvRepRev.TabIndex = 17;
@@ -828,7 +872,7 @@
             // mcRev
             // 
             this.mcRev.Location = new System.Drawing.Point(7, 75);
-            this.mcRev.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.mcRev.Margin = new System.Windows.Forms.Padding(7);
             this.mcRev.MaxSelectionCount = 5000;
             this.mcRev.Name = "mcRev";
             this.mcRev.ShowToday = false;
@@ -991,6 +1035,10 @@
         private System.Windows.Forms.MonthCalendar mcRev;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label lbl_RepRev;
+        private System.Windows.Forms.Label Lbl_Supplies_Price;
+        private System.Windows.Forms.TextBox Txt_Supplies_Price;
+        private System.Windows.Forms.Label Lbl_Supplies_AmountSold;
+        private System.Windows.Forms.TextBox Txt_Supplies_Sold;
     }
 }
 

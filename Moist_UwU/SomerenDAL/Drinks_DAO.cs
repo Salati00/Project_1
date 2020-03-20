@@ -51,5 +51,17 @@ namespace SomerenDAL
             sqlParameters[2] = new SqlParameter("@id", id);
             ExecuteEditQuery(query, sqlParameters);
         }
+
+        public void AddDrink(string Name, int Stock, int Sold, int Price)
+        {
+            string query = "insert into drinks(name,stock,sold,cost) " +
+                "values (@name,@stock,@sold,@price) ";
+            SqlParameter[] sqlParameters = new SqlParameter[4];
+            sqlParameters[0] = new SqlParameter("@name", Name);
+            sqlParameters[1] = new SqlParameter("@stock", Stock);
+            sqlParameters[2] = new SqlParameter("@sold", Sold);
+            sqlParameters[3] = new SqlParameter("@price", Price);
+            ExecuteEditQuery(query, sqlParameters);
+        }
     }
 }
