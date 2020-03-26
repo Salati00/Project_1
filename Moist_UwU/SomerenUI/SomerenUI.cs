@@ -43,6 +43,13 @@ namespace SomerenUI
                     ListViewLecPrint(listView_Lec, lecList);
                     break;
 
+                case "Supervisors":
+                    Supervisor_Service supService = new Supervisor_Service();
+                    List<Supervisor> supList = supService.GetSupervisors();
+
+                    PrintSup(listView_Sup, supList);
+                    break;
+
                 case "Rooms":
                     Room_Service roomService = new Room_Service();
                     List<Room> roomList = roomService.GetRooms();
@@ -318,6 +325,16 @@ namespace SomerenUI
             var lvi = new ListViewItem(row);
             lvRepRev.Items.Add(lvi);
         }
+        private void PrintSup(ListView lv, List<Supervisor> supList)
+        {
+            lv.Items.Clear();
+            foreach (Supervisor s in supList)
+            {
+                var row = new string[] { s.SuperviseID.ToString(), s.Name, s.ActivityID.ToString() };
+                var lvi = new ListViewItem(row);
+                lv.Items.Add(lvi);
+            }
+        }
 
         private void Txt_Supplies_TextChanged(object sender, EventArgs e)
         {
@@ -345,12 +362,15 @@ namespace SomerenUI
                     { showPanel("Lecturers"); }
                     break;
                 case 3:
-                    { showPanel("Activities"); }
+                    { showPanel("Supervisors"); }
                     break;
                 case 4:
-                    { showPanel("Rooms"); }
+                    { showPanel("Activities"); }
                     break;
                 case 5:
+                    { showPanel("Rooms"); }
+                    break;
+                case 6:
                     {
                         switch (TabControl_Bar.SelectedIndex)
                         {
@@ -379,7 +399,7 @@ namespace SomerenUI
 
         private void pictureBox8_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("What happens in Someren, stays in Someren!");
+            MessageBox.Show("What happens in Someren, stays in Someren kids!");
         }
 
         private void Lst_Activities_SelectedIndexChanged(object sender, EventArgs e)
@@ -440,6 +460,12 @@ namespace SomerenUI
             Btn_Activities_Delete.Visible = false;
 
             showPanel("Activities");
+        }
+
+        private void btn_RemoveSup_Click(object sender, EventArgs e)
+        {
+            Supervisor_Service service = new Supervisor_Service();
+            service.(Convert.ToInt32(Txt_Activities_Id.Text));
         }
     }
 }
