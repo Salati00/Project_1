@@ -27,3 +27,4 @@ C:\Users\hampi\OneDrive\Documents\GitHub\Database Project Term 3\Moist_UwU\Moist
 C:\Users\hampi\OneDrive\Documents\GitHub\Database Project Term 3\Moist_UwU\Moist_UwU\SomerenModel\obj\Debug\SomerenModel.csprojAssemblyReference.cache
 C:\Users\hampi\OneDrive\Documents\GitHub\Database Project Term 3\Moist_UwU\Moist_UwU\SomerenModel\obj\Debug\SomerenModel.dll
 C:\Users\hampi\OneDrive\Documents\GitHub\Database Project Term 3\Moist_UwU\Moist_UwU\SomerenModel\obj\Debug\SomerenModel.pdb
+E:\Projects\Moist_UwU\Moist_UwU\SomerenModel\obj\Debug\SomerenModel.csprojAssemblyReference.cache

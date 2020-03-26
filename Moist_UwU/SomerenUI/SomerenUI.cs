@@ -25,11 +25,6 @@ namespace SomerenUI
             r.InitializeRooms();*/
         }
 
-        private void SomerenUI_Load(object sender, EventArgs e)
-        {
-            showPanel("Dashboard");
-        }
-
         private void showPanel(string panelName)
         {
             switch (panelName)
@@ -74,6 +69,18 @@ namespace SomerenUI
                     Dtp_Activities_TimePart.Format = DateTimePickerFormat.Custom;
                     Dtp_Activities_TimePart.CustomFormat = "hh:mm tt";
                     Dtp_Activities_TimePart.ShowUpDown = true;
+
+                    Txt_Activities_Id.Text = "";
+                    Txt_Activities_Description.Text = "";
+                    Txt_Activities_Location.Text = "";
+                    Txt_Activities_Name.Text = "";
+                    Dtp_Activities_DatePart.Value = DateTime.Today;
+                    Dtp_Activities_TimePart.Value = DateTime.UtcNow;
+
+                    Activity_Service actService = new Activity_Service();
+                    List<Activity> ActivityList = actService.GetActivities();
+
+                    ListViewActivitiesPrint(Lst_Activities, ActivityList);
                     break;
 
                 case "CashRegister":
@@ -172,6 +179,18 @@ namespace SomerenUI
             foreach (Drink d in drinks)
             {
                 var row = new string[] { d.ID.ToString(), d.Cost.ToString(), d.Name.ToString(), d.Stock.ToString(), d.Sold.ToString(), ((d.Stock < 10)? "Stock nearly depleted":"Stock Sufficient") };
+                var lvi = new ListViewItem(row);
+                lv.Items.Add(lvi);
+            }
+
+        }
+
+        public void ListViewActivitiesPrint(ListView lv, List<Activity> activities)
+        {
+            lv.Items.Clear();
+            foreach (Activity a in activities)
+            {
+                var row = new string[] { a.ID.ToString(), a.Name, a.Location.ToString(), a.Date.ToString(), a.Description.ToString() };
                 var lvi = new ListViewItem(row);
                 lv.Items.Add(lvi);
             }
@@ -363,6 +382,48 @@ namespace SomerenUI
             MessageBox.Show("What happens in Someren, stays in Someren!");
         }
 
+        private void Lst_Activities_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            EnDisableActivityButtons();
+        }
+
+        private void EnDisableActivityButtons()
+        {
+            if (Lst_Activities.SelectedItems.Count > 0)
+            {
+                Btn_Activities_Add.Text = "Save Changes";
+                Btn_Activities_Delete.Visible = true;
+
+                ListViewItem item = Lst_Activities.SelectedItems[0];
+                Txt_Activities_Id.Text = item.SubItems[0].Text;
+                Txt_Activities_Name.Text = item.SubItems[1].Text;
+                Txt_Activities_Location.Text = item.SubItems[2].Text;
+                Txt_Activities_Description.Text = item.SubItems[4].Text;
+                Dtp_Activities_DatePart.Value = Convert.ToDateTime(item.SubItems[3].Text);
+                Dtp_Activities_TimePart.Value = Convert.ToDateTime(item.SubItems[3].Text);
+            }
+            else
+            {
+                Btn_Activities_Add.Text = "Add";
+                Btn_Activities_Delete.Visible = false;
+
+                showPanel("Activities");
+            }
+
+                
+        }
+
+        private void SomerenUI_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_Activities_Delete_Click(object sender, EventArgs e)
+        {
+            Activity_Service eys = new Activity_Service();
+            eys.RemoveActivity(Convert.ToInt32(Txt_Activities_Id.Text));
+        }
+
         private void Btn_Activities_Add_Click(object sender, EventArgs e)
         {
             Activity_Service eys = new Activity_Service();
@@ -372,9 +433,13 @@ namespace SomerenUI
             }
             else
             {
-
+                eys.UpdateActivity(Convert.ToInt32(Txt_Activities_Id.Text), Txt_Activities_Name.Text, Txt_Activities_Location.Text, (Dtp_Activities_DatePart.Value.Date + Dtp_Activities_TimePart.Value.TimeOfDay), Txt_Activities_Description.Text);
             }
-            
+
+            Btn_Activities_Add.Text = "Add";
+            Btn_Activities_Delete.Visible = false;
+
+            showPanel("Activities");
         }
     }
 }

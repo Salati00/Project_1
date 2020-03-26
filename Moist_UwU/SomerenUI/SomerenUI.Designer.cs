@@ -47,10 +47,11 @@
             this.colId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Lst_Activities = new System.Windows.Forms.ListView();
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Col_Activities_Id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Col_Activities_Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Col_Activities_Location = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Col_Activities_DateTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Col_Activities_Description = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.Lbl_Activities = new System.Windows.Forms.Label();
             this.Lbl_Supplies_Price = new System.Windows.Forms.Label();
@@ -107,20 +108,20 @@
             this.Txt_Activities_Description = new System.Windows.Forms.RichTextBox();
             this.Dtp_Activities_TimePart = new System.Windows.Forms.DateTimePicker();
             this.TabControl_Main = new System.Windows.Forms.TabControl();
-            this.TabPage_Rooms = new System.Windows.Forms.TabPage();
+            this.TabPage_Application = new System.Windows.Forms.TabPage();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.Btn_Exit = new System.Windows.Forms.Button();
+            this.lbl_Dashboard = new System.Windows.Forms.Label();
+            this.TabPage_Students = new System.Windows.Forms.TabPage();
+            this.TabPage_Lecturers = new System.Windows.Forms.TabPage();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.TabPage_Activities = new System.Windows.Forms.TabPage();
+            this.TabPage_Rooms = new System.Windows.Forms.TabPage();
             this.TabPage_Bar = new System.Windows.Forms.TabPage();
             this.TabControl_Bar = new System.Windows.Forms.TabControl();
-            this.TabPage_DrinkSup = new System.Windows.Forms.TabPage();
             this.TabPage_CashReg = new System.Windows.Forms.TabPage();
-            this.TabPage_Students = new System.Windows.Forms.TabPage();
-            this.TabPage_Application = new System.Windows.Forms.TabPage();
-            this.lbl_Dashboard = new System.Windows.Forms.Label();
-            this.TabPage_Lecturers = new System.Windows.Forms.TabPage();
+            this.TabPage_DrinkSup = new System.Windows.Forms.TabPage();
             this.TabPage_Revenue = new System.Windows.Forms.TabPage();
-            this.Btn_Exit = new System.Windows.Forms.Button();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -128,18 +129,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.TabControl_Main.SuspendLayout();
-            this.TabPage_Rooms.SuspendLayout();
+            this.TabPage_Application.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            this.TabPage_Students.SuspendLayout();
+            this.TabPage_Lecturers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.TabPage_Activities.SuspendLayout();
+            this.TabPage_Rooms.SuspendLayout();
             this.TabPage_Bar.SuspendLayout();
             this.TabControl_Bar.SuspendLayout();
-            this.TabPage_DrinkSup.SuspendLayout();
             this.TabPage_CashReg.SuspendLayout();
-            this.TabPage_Students.SuspendLayout();
-            this.TabPage_Application.SuspendLayout();
-            this.TabPage_Lecturers.SuspendLayout();
+            this.TabPage_DrinkSup.SuspendLayout();
             this.TabPage_Revenue.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.SuspendLayout();
             // 
             // listViewStudents
@@ -284,10 +285,12 @@
             // Lst_Activities
             // 
             this.Lst_Activities.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6,
-            this.columnHeader7});
+            this.Col_Activities_Id,
+            this.Col_Activities_Name,
+            this.Col_Activities_Location,
+            this.Col_Activities_DateTime,
+            this.Col_Activities_Description});
+            this.Lst_Activities.FullRowSelect = true;
             this.Lst_Activities.HideSelection = false;
             this.Lst_Activities.Location = new System.Drawing.Point(9, 35);
             this.Lst_Activities.Name = "Lst_Activities";
@@ -295,26 +298,32 @@
             this.Lst_Activities.TabIndex = 5;
             this.Lst_Activities.UseCompatibleStateImageBehavior = false;
             this.Lst_Activities.View = System.Windows.Forms.View.Details;
+            this.Lst_Activities.SelectedIndexChanged += new System.EventHandler(this.Lst_Activities_SelectedIndexChanged);
             // 
-            // columnHeader4
+            // Col_Activities_Id
             // 
-            this.columnHeader4.Text = "ID";
-            this.columnHeader4.Width = 200;
+            this.Col_Activities_Id.Text = "ID";
+            this.Col_Activities_Id.Width = 50;
             // 
-            // columnHeader5
+            // Col_Activities_Name
             // 
-            this.columnHeader5.Text = "First Name";
-            this.columnHeader5.Width = 200;
+            this.Col_Activities_Name.Text = "Name";
+            this.Col_Activities_Name.Width = 150;
             // 
-            // columnHeader6
+            // Col_Activities_Location
             // 
-            this.columnHeader6.Text = "Last Name";
-            this.columnHeader6.Width = 200;
+            this.Col_Activities_Location.Text = "Location";
+            this.Col_Activities_Location.Width = 150;
             // 
-            // columnHeader7
+            // Col_Activities_DateTime
             // 
-            this.columnHeader7.Text = "Phone Number";
-            this.columnHeader7.Width = 200;
+            this.Col_Activities_DateTime.Text = "Date and Time";
+            this.Col_Activities_DateTime.Width = 200;
+            // 
+            // Col_Activities_Description
+            // 
+            this.Col_Activities_Description.Text = "Description";
+            this.Col_Activities_Description.Width = 250;
             // 
             // pictureBox3
             // 
@@ -705,6 +714,7 @@
             this.Btn_Activities_Delete.Text = "Remove";
             this.Btn_Activities_Delete.UseVisualStyleBackColor = true;
             this.Btn_Activities_Delete.Visible = false;
+            this.Btn_Activities_Delete.Click += new System.EventHandler(this.Btn_Activities_Delete_Click);
             // 
             // Lbl_Activities_Description
             // 
@@ -805,18 +815,83 @@
             this.TabControl_Main.TabIndex = 30;
             this.TabControl_Main.SelectedIndexChanged += new System.EventHandler(this.TabControl_Main_SelectedIndexChanged);
             // 
-            // TabPage_Rooms
+            // TabPage_Application
             // 
-            this.TabPage_Rooms.Controls.Add(this.listViewRooms);
-            this.TabPage_Rooms.Controls.Add(this.label1);
-            this.TabPage_Rooms.Controls.Add(this.pictureBox2);
-            this.TabPage_Rooms.Location = new System.Drawing.Point(4, 22);
-            this.TabPage_Rooms.Name = "TabPage_Rooms";
-            this.TabPage_Rooms.Padding = new System.Windows.Forms.Padding(3);
-            this.TabPage_Rooms.Size = new System.Drawing.Size(958, 520);
-            this.TabPage_Rooms.TabIndex = 4;
-            this.TabPage_Rooms.Text = "Rooms";
-            this.TabPage_Rooms.UseVisualStyleBackColor = true;
+            this.TabPage_Application.Controls.Add(this.pictureBox8);
+            this.TabPage_Application.Controls.Add(this.Btn_Exit);
+            this.TabPage_Application.Controls.Add(this.lbl_Dashboard);
+            this.TabPage_Application.Location = new System.Drawing.Point(4, 22);
+            this.TabPage_Application.Name = "TabPage_Application";
+            this.TabPage_Application.Padding = new System.Windows.Forms.Padding(3);
+            this.TabPage_Application.Size = new System.Drawing.Size(958, 520);
+            this.TabPage_Application.TabIndex = 0;
+            this.TabPage_Application.Text = "Application";
+            this.TabPage_Application.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::SomerenUI.Properties.Resources.someren;
+            this.pictureBox8.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox8.InitialImage")));
+            this.pictureBox8.Location = new System.Drawing.Point(758, 32);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(130, 123);
+            this.pictureBox8.TabIndex = 3;
+            this.pictureBox8.TabStop = false;
+            this.pictureBox8.Click += new System.EventHandler(this.pictureBox8_Click);
+            // 
+            // Btn_Exit
+            // 
+            this.Btn_Exit.Location = new System.Drawing.Point(11, 7);
+            this.Btn_Exit.Name = "Btn_Exit";
+            this.Btn_Exit.Size = new System.Drawing.Size(182, 27);
+            this.Btn_Exit.TabIndex = 2;
+            this.Btn_Exit.Text = "Exit";
+            this.Btn_Exit.UseVisualStyleBackColor = true;
+            this.Btn_Exit.Click += new System.EventHandler(this.Btn_Exit_Click);
+            // 
+            // lbl_Dashboard
+            // 
+            this.lbl_Dashboard.AutoSize = true;
+            this.lbl_Dashboard.Location = new System.Drawing.Point(8, 59);
+            this.lbl_Dashboard.Name = "lbl_Dashboard";
+            this.lbl_Dashboard.Size = new System.Drawing.Size(185, 13);
+            this.lbl_Dashboard.TabIndex = 1;
+            this.lbl_Dashboard.Text = "Welcome to the Someren Application!";
+            // 
+            // TabPage_Students
+            // 
+            this.TabPage_Students.Controls.Add(this.listViewStudents);
+            this.TabPage_Students.Controls.Add(this.lbl_Students);
+            this.TabPage_Students.Controls.Add(this.pictureBox1);
+            this.TabPage_Students.Location = new System.Drawing.Point(4, 22);
+            this.TabPage_Students.Name = "TabPage_Students";
+            this.TabPage_Students.Padding = new System.Windows.Forms.Padding(3);
+            this.TabPage_Students.Size = new System.Drawing.Size(958, 520);
+            this.TabPage_Students.TabIndex = 1;
+            this.TabPage_Students.Text = "Students";
+            this.TabPage_Students.UseVisualStyleBackColor = true;
+            // 
+            // TabPage_Lecturers
+            // 
+            this.TabPage_Lecturers.Controls.Add(this.pictureBox7);
+            this.TabPage_Lecturers.Controls.Add(this.lbl_Lec);
+            this.TabPage_Lecturers.Controls.Add(this.listView_Lec);
+            this.TabPage_Lecturers.Location = new System.Drawing.Point(4, 22);
+            this.TabPage_Lecturers.Name = "TabPage_Lecturers";
+            this.TabPage_Lecturers.Size = new System.Drawing.Size(958, 520);
+            this.TabPage_Lecturers.TabIndex = 5;
+            this.TabPage_Lecturers.Text = "Lecturers";
+            this.TabPage_Lecturers.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::SomerenUI.Properties.Resources.someren;
+            this.pictureBox7.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox7.InitialImage")));
+            this.pictureBox7.Location = new System.Drawing.Point(825, 3);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(130, 123);
+            this.pictureBox7.TabIndex = 8;
+            this.pictureBox7.TabStop = false;
             // 
             // TabPage_Activities
             // 
@@ -843,6 +918,19 @@
             this.TabPage_Activities.Text = "Activities";
             this.TabPage_Activities.UseVisualStyleBackColor = true;
             // 
+            // TabPage_Rooms
+            // 
+            this.TabPage_Rooms.Controls.Add(this.listViewRooms);
+            this.TabPage_Rooms.Controls.Add(this.label1);
+            this.TabPage_Rooms.Controls.Add(this.pictureBox2);
+            this.TabPage_Rooms.Location = new System.Drawing.Point(4, 22);
+            this.TabPage_Rooms.Name = "TabPage_Rooms";
+            this.TabPage_Rooms.Padding = new System.Windows.Forms.Padding(3);
+            this.TabPage_Rooms.Size = new System.Drawing.Size(958, 520);
+            this.TabPage_Rooms.TabIndex = 4;
+            this.TabPage_Rooms.Text = "Rooms";
+            this.TabPage_Rooms.UseVisualStyleBackColor = true;
+            // 
             // TabPage_Bar
             // 
             this.TabPage_Bar.Controls.Add(this.TabControl_Bar);
@@ -866,6 +954,23 @@
             this.TabControl_Bar.Size = new System.Drawing.Size(952, 514);
             this.TabControl_Bar.TabIndex = 0;
             this.TabControl_Bar.SelectedIndexChanged += new System.EventHandler(this.TabControl_Main_SelectedIndexChanged);
+            // 
+            // TabPage_CashReg
+            // 
+            this.TabPage_CashReg.Controls.Add(this.Btn_Register_Checkout);
+            this.TabPage_CashReg.Controls.Add(this.label2);
+            this.TabPage_CashReg.Controls.Add(this.Lst_RegStu);
+            this.TabPage_CashReg.Controls.Add(this.pictureBox5);
+            this.TabPage_CashReg.Controls.Add(this.Lst_RegDrink);
+            this.TabPage_CashReg.Controls.Add(this.label3);
+            this.TabPage_CashReg.Controls.Add(this.label4);
+            this.TabPage_CashReg.Location = new System.Drawing.Point(4, 22);
+            this.TabPage_CashReg.Name = "TabPage_CashReg";
+            this.TabPage_CashReg.Padding = new System.Windows.Forms.Padding(3);
+            this.TabPage_CashReg.Size = new System.Drawing.Size(944, 488);
+            this.TabPage_CashReg.TabIndex = 0;
+            this.TabPage_CashReg.Text = "Cash Register";
+            this.TabPage_CashReg.UseVisualStyleBackColor = true;
             // 
             // TabPage_DrinkSup
             // 
@@ -891,70 +996,6 @@
             this.TabPage_DrinkSup.Text = "Drink Supplies";
             this.TabPage_DrinkSup.UseVisualStyleBackColor = true;
             // 
-            // TabPage_CashReg
-            // 
-            this.TabPage_CashReg.Controls.Add(this.Btn_Register_Checkout);
-            this.TabPage_CashReg.Controls.Add(this.label2);
-            this.TabPage_CashReg.Controls.Add(this.Lst_RegStu);
-            this.TabPage_CashReg.Controls.Add(this.pictureBox5);
-            this.TabPage_CashReg.Controls.Add(this.Lst_RegDrink);
-            this.TabPage_CashReg.Controls.Add(this.label3);
-            this.TabPage_CashReg.Controls.Add(this.label4);
-            this.TabPage_CashReg.Location = new System.Drawing.Point(4, 22);
-            this.TabPage_CashReg.Name = "TabPage_CashReg";
-            this.TabPage_CashReg.Padding = new System.Windows.Forms.Padding(3);
-            this.TabPage_CashReg.Size = new System.Drawing.Size(944, 488);
-            this.TabPage_CashReg.TabIndex = 0;
-            this.TabPage_CashReg.Text = "Cash Register";
-            this.TabPage_CashReg.UseVisualStyleBackColor = true;
-            // 
-            // TabPage_Students
-            // 
-            this.TabPage_Students.Controls.Add(this.listViewStudents);
-            this.TabPage_Students.Controls.Add(this.lbl_Students);
-            this.TabPage_Students.Controls.Add(this.pictureBox1);
-            this.TabPage_Students.Location = new System.Drawing.Point(4, 22);
-            this.TabPage_Students.Name = "TabPage_Students";
-            this.TabPage_Students.Padding = new System.Windows.Forms.Padding(3);
-            this.TabPage_Students.Size = new System.Drawing.Size(958, 520);
-            this.TabPage_Students.TabIndex = 1;
-            this.TabPage_Students.Text = "Students";
-            this.TabPage_Students.UseVisualStyleBackColor = true;
-            // 
-            // TabPage_Application
-            // 
-            this.TabPage_Application.Controls.Add(this.pictureBox8);
-            this.TabPage_Application.Controls.Add(this.Btn_Exit);
-            this.TabPage_Application.Controls.Add(this.lbl_Dashboard);
-            this.TabPage_Application.Location = new System.Drawing.Point(4, 22);
-            this.TabPage_Application.Name = "TabPage_Application";
-            this.TabPage_Application.Padding = new System.Windows.Forms.Padding(3);
-            this.TabPage_Application.Size = new System.Drawing.Size(958, 520);
-            this.TabPage_Application.TabIndex = 0;
-            this.TabPage_Application.Text = "Application";
-            this.TabPage_Application.UseVisualStyleBackColor = true;
-            // 
-            // lbl_Dashboard
-            // 
-            this.lbl_Dashboard.AutoSize = true;
-            this.lbl_Dashboard.Location = new System.Drawing.Point(8, 59);
-            this.lbl_Dashboard.Name = "lbl_Dashboard";
-            this.lbl_Dashboard.Size = new System.Drawing.Size(185, 13);
-            this.lbl_Dashboard.TabIndex = 1;
-            this.lbl_Dashboard.Text = "Welcome to the Someren Application!";
-            // 
-            // TabPage_Lecturers
-            // 
-            this.TabPage_Lecturers.Controls.Add(this.pictureBox7);
-            this.TabPage_Lecturers.Controls.Add(this.lbl_Lec);
-            this.TabPage_Lecturers.Controls.Add(this.listView_Lec);
-            this.TabPage_Lecturers.Location = new System.Drawing.Point(4, 22);
-            this.TabPage_Lecturers.Name = "TabPage_Lecturers";
-            this.TabPage_Lecturers.Size = new System.Drawing.Size(958, 520);
-            this.TabPage_Lecturers.TabIndex = 5;
-            this.TabPage_Lecturers.Text = "Lecturers";
-            this.TabPage_Lecturers.UseVisualStyleBackColor = true;
-            // 
             // TabPage_Revenue
             // 
             this.TabPage_Revenue.Controls.Add(this.btn_RepRev_Calc);
@@ -969,37 +1010,6 @@
             this.TabPage_Revenue.TabIndex = 2;
             this.TabPage_Revenue.Text = "Revenue Report";
             this.TabPage_Revenue.UseVisualStyleBackColor = true;
-            // 
-            // Btn_Exit
-            // 
-            this.Btn_Exit.Location = new System.Drawing.Point(11, 7);
-            this.Btn_Exit.Name = "Btn_Exit";
-            this.Btn_Exit.Size = new System.Drawing.Size(182, 27);
-            this.Btn_Exit.TabIndex = 2;
-            this.Btn_Exit.Text = "Exit";
-            this.Btn_Exit.UseVisualStyleBackColor = true;
-            this.Btn_Exit.Click += new System.EventHandler(this.Btn_Exit_Click);
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = global::SomerenUI.Properties.Resources.someren;
-            this.pictureBox7.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox7.InitialImage")));
-            this.pictureBox7.Location = new System.Drawing.Point(825, 3);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(130, 123);
-            this.pictureBox7.TabIndex = 8;
-            this.pictureBox7.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = global::SomerenUI.Properties.Resources.someren;
-            this.pictureBox8.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox8.InitialImage")));
-            this.pictureBox8.Location = new System.Drawing.Point(758, 32);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(130, 123);
-            this.pictureBox8.TabIndex = 3;
-            this.pictureBox8.TabStop = false;
-            this.pictureBox8.Click += new System.EventHandler(this.pictureBox8_Click);
             // 
             // SomerenUI
             // 
@@ -1019,26 +1029,26 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.TabControl_Main.ResumeLayout(false);
-            this.TabPage_Rooms.ResumeLayout(false);
-            this.TabPage_Rooms.PerformLayout();
-            this.TabPage_Activities.ResumeLayout(false);
-            this.TabPage_Activities.PerformLayout();
-            this.TabPage_Bar.ResumeLayout(false);
-            this.TabControl_Bar.ResumeLayout(false);
-            this.TabPage_DrinkSup.ResumeLayout(false);
-            this.TabPage_DrinkSup.PerformLayout();
-            this.TabPage_CashReg.ResumeLayout(false);
-            this.TabPage_CashReg.PerformLayout();
-            this.TabPage_Students.ResumeLayout(false);
-            this.TabPage_Students.PerformLayout();
             this.TabPage_Application.ResumeLayout(false);
             this.TabPage_Application.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            this.TabPage_Students.ResumeLayout(false);
+            this.TabPage_Students.PerformLayout();
             this.TabPage_Lecturers.ResumeLayout(false);
             this.TabPage_Lecturers.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            this.TabPage_Activities.ResumeLayout(false);
+            this.TabPage_Activities.PerformLayout();
+            this.TabPage_Rooms.ResumeLayout(false);
+            this.TabPage_Rooms.PerformLayout();
+            this.TabPage_Bar.ResumeLayout(false);
+            this.TabControl_Bar.ResumeLayout(false);
+            this.TabPage_CashReg.ResumeLayout(false);
+            this.TabPage_CashReg.PerformLayout();
+            this.TabPage_DrinkSup.ResumeLayout(false);
+            this.TabPage_DrinkSup.PerformLayout();
             this.TabPage_Revenue.ResumeLayout(false);
             this.TabPage_Revenue.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1062,10 +1072,10 @@
         private System.Windows.Forms.ColumnHeader colName;
         private System.Windows.Forms.ColumnHeader studentPhoneNumber;
         private System.Windows.Forms.ListView Lst_Activities;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader Col_Activities_Id;
+        private System.Windows.Forms.ColumnHeader Col_Activities_Name;
+        private System.Windows.Forms.ColumnHeader Col_Activities_Location;
+        private System.Windows.Forms.ColumnHeader Col_Activities_DateTime;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label Lbl_Activities;
         private System.Windows.Forms.ListView Lst_Supplies;
@@ -1136,6 +1146,7 @@
         private System.Windows.Forms.Button Btn_Exit;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.ColumnHeader Col_Activities_Description;
     }
 }
 

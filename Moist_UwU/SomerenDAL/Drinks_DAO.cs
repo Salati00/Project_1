@@ -11,7 +11,7 @@ namespace SomerenDAL
 {
     public class Drinks_DAO : Base
     {
-        public List<Drink> Db_Get_Drinks()
+        public List<Drink> Get_Drinks()
         {
             string query = "SELECT drink_id, cost, name, stock, sold FROM [drinks] " +
                 "where " +

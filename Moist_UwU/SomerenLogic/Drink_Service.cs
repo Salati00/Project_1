@@ -16,7 +16,7 @@ namespace SomerenLogic
         {
             try
             {
-                List<Drink> drink = drinks_db.Db_Get_Drinks();
+                List<Drink> drink = drinks_db.Get_Drinks();
                 return drink;
             }
             catch (Exception ex)
