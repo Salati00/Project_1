@@ -117,6 +117,27 @@
             this.mcRev = new System.Windows.Forms.MonthCalendar();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.lbl_RepRev = new System.Windows.Forms.Label();
+            this.Btn_Activities_Add = new System.Windows.Forms.Button();
+            this.Btn_Activities_Delete = new System.Windows.Forms.Button();
+            this.Lbl_Activities_Description = new System.Windows.Forms.Label();
+            this.Lbl_Activities_Id = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.Lbl_Activities_Location = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.Lbl_Activities_Name = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.Dtp_Activities_DatePart = new System.Windows.Forms.DateTimePicker();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.Dtp_Activities_TimePart = new System.Windows.Forms.DateTimePicker();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
             ((System.ComponentModel.ISupportInitialize)(this.img_Dashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnl_Dashboard.SuspendLayout();
@@ -133,6 +154,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.pnl_RepRev.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.tabControl1.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.tabControl2.SuspendLayout();
             this.SuspendLayout();
             // 
             // img_Dashboard
@@ -439,10 +463,24 @@
             // 
             // Pnl_Activities
             // 
+            this.Pnl_Activities.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Pnl_Activities.Controls.Add(this.tabControl1);
+            this.Pnl_Activities.Controls.Add(this.Dtp_Activities_TimePart);
+            this.Pnl_Activities.Controls.Add(this.richTextBox1);
+            this.Pnl_Activities.Controls.Add(this.Dtp_Activities_DatePart);
+            this.Pnl_Activities.Controls.Add(this.Lbl_Activities_Description);
+            this.Pnl_Activities.Controls.Add(this.Btn_Activities_Delete);
+            this.Pnl_Activities.Controls.Add(this.Btn_Activities_Add);
             this.Pnl_Activities.Controls.Add(this.Lst_Activities);
             this.Pnl_Activities.Controls.Add(this.pictureBox3);
+            this.Pnl_Activities.Controls.Add(this.Lbl_Activities_Id);
             this.Pnl_Activities.Controls.Add(this.Lbl_Activities);
-            this.Pnl_Activities.Location = new System.Drawing.Point(9, 24);
+            this.Pnl_Activities.Controls.Add(this.textBox3);
+            this.Pnl_Activities.Controls.Add(this.textBox5);
+            this.Pnl_Activities.Controls.Add(this.Lbl_Activities_Location);
+            this.Pnl_Activities.Controls.Add(this.Lbl_Activities_Name);
+            this.Pnl_Activities.Controls.Add(this.textBox4);
+            this.Pnl_Activities.Location = new System.Drawing.Point(3, 27);
             this.Pnl_Activities.Name = "Pnl_Activities";
             this.Pnl_Activities.Size = new System.Drawing.Size(938, 466);
             this.Pnl_Activities.TabIndex = 6;
@@ -518,7 +556,7 @@
             this.pnl_Supplies.Controls.Add(this.Lst_Supplies);
             this.pnl_Supplies.Controls.Add(this.pictureBox4);
             this.pnl_Supplies.Controls.Add(this.Lbl_Supplies);
-            this.pnl_Supplies.Location = new System.Drawing.Point(3, 25);
+            this.pnl_Supplies.Location = new System.Drawing.Point(963, 24);
             this.pnl_Supplies.Name = "pnl_Supplies";
             this.pnl_Supplies.Size = new System.Drawing.Size(938, 466);
             this.pnl_Supplies.TabIndex = 7;
@@ -696,7 +734,7 @@
             this.pnl_CashRegister.Controls.Add(this.label3);
             this.pnl_CashRegister.Controls.Add(this.pictureBox5);
             this.pnl_CashRegister.Controls.Add(this.label2);
-            this.pnl_CashRegister.Location = new System.Drawing.Point(3, 22);
+            this.pnl_CashRegister.Location = new System.Drawing.Point(966, 32);
             this.pnl_CashRegister.Name = "pnl_CashRegister";
             this.pnl_CashRegister.Size = new System.Drawing.Size(938, 466);
             this.pnl_CashRegister.TabIndex = 8;
@@ -823,7 +861,7 @@
             this.pnl_RepRev.Controls.Add(this.mcRev);
             this.pnl_RepRev.Controls.Add(this.pictureBox6);
             this.pnl_RepRev.Controls.Add(this.lbl_RepRev);
-            this.pnl_RepRev.Location = new System.Drawing.Point(3, 24);
+            this.pnl_RepRev.Location = new System.Drawing.Point(1000, 24);
             this.pnl_RepRev.Name = "pnl_RepRev";
             this.pnl_RepRev.Size = new System.Drawing.Size(938, 466);
             this.pnl_RepRev.TabIndex = 13;
@@ -899,6 +937,203 @@
             this.lbl_RepRev.TabIndex = 3;
             this.lbl_RepRev.Text = "Report Revenue";
             // 
+            // Btn_Activities_Add
+            // 
+            this.Btn_Activities_Add.Location = new System.Drawing.Point(805, 359);
+            this.Btn_Activities_Add.Name = "Btn_Activities_Add";
+            this.Btn_Activities_Add.Size = new System.Drawing.Size(118, 40);
+            this.Btn_Activities_Add.TabIndex = 6;
+            this.Btn_Activities_Add.Text = "Add";
+            this.Btn_Activities_Add.UseVisualStyleBackColor = true;
+            // 
+            // Btn_Activities_Delete
+            // 
+            this.Btn_Activities_Delete.Location = new System.Drawing.Point(805, 405);
+            this.Btn_Activities_Delete.Name = "Btn_Activities_Delete";
+            this.Btn_Activities_Delete.Size = new System.Drawing.Size(118, 40);
+            this.Btn_Activities_Delete.TabIndex = 7;
+            this.Btn_Activities_Delete.Text = "Remove";
+            this.Btn_Activities_Delete.UseVisualStyleBackColor = true;
+            this.Btn_Activities_Delete.Visible = false;
+            // 
+            // Lbl_Activities_Description
+            // 
+            this.Lbl_Activities_Description.AutoSize = true;
+            this.Lbl_Activities_Description.Location = new System.Drawing.Point(520, 359);
+            this.Lbl_Activities_Description.Name = "Lbl_Activities_Description";
+            this.Lbl_Activities_Description.Size = new System.Drawing.Size(60, 13);
+            this.Lbl_Activities_Description.TabIndex = 26;
+            this.Lbl_Activities_Description.Text = "Description";
+            // 
+            // Lbl_Activities_Id
+            // 
+            this.Lbl_Activities_Id.AutoSize = true;
+            this.Lbl_Activities_Id.Location = new System.Drawing.Point(16, 359);
+            this.Lbl_Activities_Id.Name = "Lbl_Activities_Id";
+            this.Lbl_Activities_Id.Size = new System.Drawing.Size(18, 13);
+            this.Lbl_Activities_Id.TabIndex = 22;
+            this.Lbl_Activities_Id.Text = "ID";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Enabled = false;
+            this.textBox3.Location = new System.Drawing.Point(19, 377);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(90, 20);
+            this.textBox3.TabIndex = 21;
+            // 
+            // Lbl_Activities_Location
+            // 
+            this.Lbl_Activities_Location.AutoSize = true;
+            this.Lbl_Activities_Location.Location = new System.Drawing.Point(352, 359);
+            this.Lbl_Activities_Location.Name = "Lbl_Activities_Location";
+            this.Lbl_Activities_Location.Size = new System.Drawing.Size(48, 13);
+            this.Lbl_Activities_Location.TabIndex = 20;
+            this.Lbl_Activities_Location.Text = "Location";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(355, 377);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(106, 20);
+            this.textBox4.TabIndex = 19;
+            // 
+            // Lbl_Activities_Name
+            // 
+            this.Lbl_Activities_Name.AutoSize = true;
+            this.Lbl_Activities_Name.Location = new System.Drawing.Point(142, 359);
+            this.Lbl_Activities_Name.Name = "Lbl_Activities_Name";
+            this.Lbl_Activities_Name.Size = new System.Drawing.Size(35, 13);
+            this.Lbl_Activities_Name.TabIndex = 18;
+            this.Lbl_Activities_Name.Text = "Name";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(145, 377);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(189, 20);
+            this.textBox5.TabIndex = 17;
+            // 
+            // Dtp_Activities_DatePart
+            // 
+            this.Dtp_Activities_DatePart.Location = new System.Drawing.Point(19, 425);
+            this.Dtp_Activities_DatePart.Name = "Dtp_Activities_DatePart";
+            this.Dtp_Activities_DatePart.Size = new System.Drawing.Size(207, 20);
+            this.Dtp_Activities_DatePart.TabIndex = 27;
+            this.Dtp_Activities_DatePart.Value = new System.DateTime(2000, 1, 1, 12, 0, 0, 0);
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.richTextBox1.Location = new System.Drawing.Point(523, 377);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(259, 68);
+            this.richTextBox1.TabIndex = 28;
+            this.richTextBox1.Text = "";
+            // 
+            // Dtp_Activities_TimePart
+            // 
+            this.Dtp_Activities_TimePart.Location = new System.Drawing.Point(232, 425);
+            this.Dtp_Activities_TimePart.Name = "Dtp_Activities_TimePart";
+            this.Dtp_Activities_TimePart.Size = new System.Drawing.Size(102, 20);
+            this.Dtp_Activities_TimePart.TabIndex = 29;
+            this.Dtp_Activities_TimePart.Value = new System.DateTime(2000, 1, 1, 12, 0, 0, 0);
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Location = new System.Drawing.Point(271, 84);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(335, 288);
+            this.tabControl1.TabIndex = 30;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(327, 262);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(327, 262);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.tabControl2);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(327, 262);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "tabPage3";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(327, 262);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "tabPage4";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(327, 262);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "tabPage5";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // tabControl2
+            // 
+            this.tabControl2.Controls.Add(this.tabPage6);
+            this.tabControl2.Controls.Add(this.tabPage7);
+            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl2.Location = new System.Drawing.Point(3, 3);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(321, 256);
+            this.tabControl2.TabIndex = 0;
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(313, 230);
+            this.tabPage6.TabIndex = 0;
+            this.tabPage6.Text = "tabPage6";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(192, 74);
+            this.tabPage7.TabIndex = 1;
+            this.tabPage7.Text = "tabPage7";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
             // SomerenUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -944,6 +1179,9 @@
             this.pnl_RepRev.ResumeLayout(false);
             this.pnl_RepRev.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.tabControl2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1039,6 +1277,27 @@
         private System.Windows.Forms.TextBox Txt_Supplies_Price;
         private System.Windows.Forms.Label Lbl_Supplies_AmountSold;
         private System.Windows.Forms.TextBox Txt_Supplies_Sold;
+        private System.Windows.Forms.Label Lbl_Activities_Description;
+        private System.Windows.Forms.Button Btn_Activities_Delete;
+        private System.Windows.Forms.Button Btn_Activities_Add;
+        private System.Windows.Forms.Label Lbl_Activities_Id;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label Lbl_Activities_Location;
+        private System.Windows.Forms.Label Lbl_Activities_Name;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.DateTimePicker Dtp_Activities_DatePart;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.DateTimePicker Dtp_Activities_TimePart;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabControl tabControl2;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TabPage tabPage5;
     }
 }
 

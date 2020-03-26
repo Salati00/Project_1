@@ -119,8 +119,13 @@ namespace SomerenUI
             else if(panelName == "Activities")
             {
                 HideAll();
-
+                Pnl_Activities.Show();
                 
+                Dtp_Activities_TimePart.Format = DateTimePickerFormat.Custom;
+                Dtp_Activities_TimePart.CustomFormat = "hh:mm tt";
+                Dtp_Activities_TimePart.ShowUpDown = true;
+
+
             }
             else if(panelName == "CashRegister")
             {
