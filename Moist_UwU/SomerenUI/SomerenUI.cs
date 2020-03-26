@@ -30,117 +30,65 @@ namespace SomerenUI
             showPanel("Dashboard");
         }
 
-        private void HideAll()
-        {
-            pnl_Students.Hide();
-            pnl_Rooms.Hide();
-            pnl_Lec.Hide();
-            Pnl_Activities.Hide();
-            pnl_Dashboard.Hide();
-            img_Dashboard.Hide();
-            pnl_Supplies.Hide();
-            pnl_CashRegister.Hide();
-            pnl_RepRev.Hide();
-        }
-
         private void showPanel(string panelName)
         {
-
-            if(panelName == "Dashboard")
+            switch (panelName)
             {
-                HideAll();
+                case "Students":
+                    Student_Service studService = new Student_Service();
+                    List<Student> studentList = studService.GetStudents();
 
-                // show dashboard
-                pnl_Dashboard.Show();
-                img_Dashboard.Show();
-            }
-            else if(panelName == "Students")
-            {
-                HideAll();
+                    ListViewStuPrint(listViewStudents, studentList);
+                    break;
 
-                // show students
-                pnl_Students.Show();
+                case "Lecturers":
+                    Lecturer_Service lecService = new Lecturer_Service();
+                    List<Teacher> lecList = lecService.GetTeachers();
 
-                // fill the students listview within the students panel with a list of students
-                Student_Service studService = new Student_Service();
-                List<Student> studentList = studService.GetStudents();
+                    ListViewLecPrint(listView_Lec, lecList);
+                    break;
 
-                ListViewStuPrint(listViewStudents, studentList);
-            }
-            else if (panelName == "Lecturer")
-            {
-                HideAll();
+                case "Rooms":
+                    Room_Service roomService = new Room_Service();
+                    List<Room> roomList = roomService.GetRooms();
 
-                // show rooms
-                pnl_Lec.Show();
+                    ListViewRoomPrint(listViewRooms, roomList);
+                    break;
 
-                // fill the lecturer listview within the lectuer panel with a list of lecturers
-                Lecturer_Service lecService = new Lecturer_Service();
-                List<Teacher> lecList = lecService.GetTeachers();
+                case "DrinkSup":
+                    Btn_Supplies_Save.Enabled = false;
+                    Txt_Supplies_Id.Text = string.Empty;
+                    Txt_Supplies_NewName.Text = string.Empty;
+                    Txt_Supplies_NewStock.Text = string.Empty;
+                    Txt_Supplies_Price.Text = string.Empty;
+                    Txt_Supplies_Sold.Text = string.Empty;
 
-                ListViewLecPrint(listView_Lec, lecList);
+                    // fill the students listview within the students panel with a list of students
+                    Drink_Service drinkService = new Drink_Service();
+                    List<Drink> DrinkList = drinkService.GetDrinks();
 
-            }
-            else if (panelName == "Rooms")
-            {
-                HideAll();
+                    ListViewStockPrint(Lst_Supplies, DrinkList);
+                    break;
 
-                // show rooms
-                pnl_Rooms.Show();
+                case "Activities":
+                    Dtp_Activities_TimePart.Format = DateTimePickerFormat.Custom;
+                    Dtp_Activities_TimePart.CustomFormat = "hh:mm tt";
+                    Dtp_Activities_TimePart.ShowUpDown = true;
+                    break;
 
-                // fill the rooms listview within the rooms panel with a list of rooms
-                Room_Service roomService = new Room_Service();
-                List<Room> roomList = roomService.GetRooms();
+                case "CashRegister":
+                    FillRegistryStudents();
+                    FillRegistryDrinks();
+                    Btn_Register_Checkout.Enabled = false;
+                    break;
 
-                ListViewRoomPrint(listViewRooms, roomList);
-            }
-            else if (panelName == "DrinkSup")
-            {
-                HideAll();
+                case "RevRep":
+                    mcRev.MaxDate = DateTime.Today;
+                    PrintReport();
+                    break;
 
-                pnl_Supplies.Show();
-
-                //Txt_Supplies_NewName.Enabled = false;
-                //Txt_Supplies_NewStock.Enabled = false;
-                Btn_Supplies_Save.Enabled = false;
-                Txt_Supplies_Id.Text = string.Empty;
-                Txt_Supplies_NewName.Text = string.Empty;
-                Txt_Supplies_NewStock.Text = string.Empty;
-                Txt_Supplies_Price.Text = string.Empty;
-                Txt_Supplies_Sold.Text = string.Empty;
-
-                // fill the students listview within the students panel with a list of students
-                Drink_Service drinkService = new Drink_Service();
-                List<Drink> DrinkList = drinkService.GetDrinks();
-
-                ListViewStockPrint(Lst_Supplies, DrinkList);
-
-            }
-            else if(panelName == "Activities")
-            {
-                HideAll();
-                Pnl_Activities.Show();
-                
-                Dtp_Activities_TimePart.Format = DateTimePickerFormat.Custom;
-                Dtp_Activities_TimePart.CustomFormat = "hh:mm tt";
-                Dtp_Activities_TimePart.ShowUpDown = true;
-
-
-            }
-            else if(panelName == "CashRegister")
-            {
-                HideAll();
-                pnl_CashRegister.Show();
-                FillRegistryStudents();
-                FillRegistryDrinks();
-                Btn_Register_Checkout.Enabled = false;
-            }
-            else if (panelName == "RepRev")
-            {
-                HideAll();
-                pnl_RepRev.Show();
-                mcRev.MaxDate = DateTime.Today;
-                PrintReport();
+                default:
+                    break;
             }
         }
 
@@ -230,51 +178,10 @@ namespace SomerenUI
 
         }
 
-        private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-           //
-        }
-
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void dashboardToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            showPanel("Dashboard");
-        }
-
-        private void img_Dashboard_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("What happens in Someren, stays in Someren!");
-        }
-
-        private void studentsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            showPanel("Students");
-        }
-
-        private void roomsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            showPanel("Rooms");
-        }
-
-        private void lecturersToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            showPanel("Lecturer");
-        }
-
-        private void activitiesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            showPanel("Activities");
-        }
-
         private void btn_Checkout_Click(object sender, EventArgs e)
         {
             Register_Service reg = new Register_Service();
             ListViewItem stu = Lst_RegStu.SelectedItems[0];
-
 
             foreach (ListViewItem item in Lst_RegDrink.CheckedItems)
             {
@@ -368,21 +275,6 @@ namespace SomerenUI
             EnDisableRegistryButton(Lst_RegStu, Lst_RegDrink);
         }
 
-        private void cashRegister1ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            showPanel("CashRegister");
-        }
-
-        private void drinkSupplies1ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            showPanel("DrinkSup");
-        }
-
-        private void reportRevenueToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            showPanel("RepRev");
-
-        }
 
         private void btn_RepRev_Calc_Click(object sender, EventArgs e)
         {
@@ -418,6 +310,71 @@ namespace SomerenUI
             {
                 Btn_Supplies_Save.Enabled = false;
             }
+        }
+
+        private void TabControl_Main_SelectedIndexChanged(object sender, EventArgs e)//Rese
+        {
+            switch (TabControl_Main.SelectedIndex)
+            {
+                case 0:
+                    { /**/ }
+                    break;
+                case 1:
+                    { showPanel("Students"); }
+                    break;
+                case 2:
+                    { showPanel("Lecturers"); }
+                    break;
+                case 3:
+                    { showPanel("Activities"); }
+                    break;
+                case 4:
+                    { showPanel("Rooms"); }
+                    break;
+                case 5:
+                    {
+                        switch (TabControl_Bar.SelectedIndex)
+                        {
+                            case 0:
+                                showPanel("CashRegister");
+                                break;
+                            case 1:
+                                showPanel("DrinkSup");
+                                break;
+                            case 2:
+                                showPanel("RevRep");
+                                break;
+
+                        }
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void Btn_Exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("What happens in Someren, stays in Someren!");
+        }
+
+        private void Btn_Activities_Add_Click(object sender, EventArgs e)
+        {
+            Activity_Service eys = new Activity_Service();
+            if (!Btn_Activities_Delete.Visible)
+            {
+                eys.InsertActivity(Txt_Activities_Name.Text, Txt_Activities_Location.Text, (Dtp_Activities_DatePart.Value.Date + Dtp_Activities_TimePart.Value.TimeOfDay), Txt_Activities_Description.Text);
+            }
+            else
+            {
+
+            }
+            
         }
     }
 }
