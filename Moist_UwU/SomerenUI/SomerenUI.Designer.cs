@@ -116,6 +116,8 @@
             this.TabPage_Lecturers = new System.Windows.Forms.TabPage();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.TabPage_Supervisors = new System.Windows.Forms.TabPage();
+            this.btn_RemoveSup = new System.Windows.Forms.Button();
+            this.btn_AddSupp = new System.Windows.Forms.Button();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.lblSupervisors = new System.Windows.Forms.Label();
             this.listView_Sup = new System.Windows.Forms.ListView();
@@ -128,8 +130,7 @@
             this.TabPage_CashReg = new System.Windows.Forms.TabPage();
             this.TabPage_DrinkSup = new System.Windows.Forms.TabPage();
             this.TabPage_Revenue = new System.Windows.Forms.TabPage();
-            this.btn_AddSupp = new System.Windows.Forms.Button();
-            this.btn_RemoveSup = new System.Windows.Forms.Button();
+            this.tabPage_Time = new System.Windows.Forms.TabPage();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -857,6 +858,7 @@
             this.TabControl_Main.Controls.Add(this.TabPage_Activities);
             this.TabControl_Main.Controls.Add(this.TabPage_Rooms);
             this.TabControl_Main.Controls.Add(this.TabPage_Bar);
+            this.TabControl_Main.Controls.Add(this.tabPage_Time);
             this.TabControl_Main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabControl_Main.Location = new System.Drawing.Point(0, 0);
             this.TabControl_Main.Margin = new System.Windows.Forms.Padding(4);
@@ -965,6 +967,25 @@
             this.TabPage_Supervisors.TabIndex = 6;
             this.TabPage_Supervisors.Text = "Supervisors";
             this.TabPage_Supervisors.UseVisualStyleBackColor = true;
+            // 
+            // btn_RemoveSup
+            // 
+            this.btn_RemoveSup.Location = new System.Drawing.Point(350, 397);
+            this.btn_RemoveSup.Name = "btn_RemoveSup";
+            this.btn_RemoveSup.Size = new System.Drawing.Size(253, 57);
+            this.btn_RemoveSup.TabIndex = 11;
+            this.btn_RemoveSup.Text = "Remove";
+            this.btn_RemoveSup.UseVisualStyleBackColor = true;
+            this.btn_RemoveSup.Click += new System.EventHandler(this.btn_RemoveSup_Click);
+            // 
+            // btn_AddSupp
+            // 
+            this.btn_AddSupp.Location = new System.Drawing.Point(25, 397);
+            this.btn_AddSupp.Name = "btn_AddSupp";
+            this.btn_AddSupp.Size = new System.Drawing.Size(253, 57);
+            this.btn_AddSupp.TabIndex = 10;
+            this.btn_AddSupp.Text = "Add";
+            this.btn_AddSupp.UseVisualStyleBackColor = true;
             // 
             // pictureBox9
             // 
@@ -1138,24 +1159,15 @@
             this.TabPage_Revenue.Text = "Revenue Report";
             this.TabPage_Revenue.UseVisualStyleBackColor = true;
             // 
-            // btn_AddSupp
+            // tabPage_Time
             // 
-            this.btn_AddSupp.Location = new System.Drawing.Point(25, 397);
-            this.btn_AddSupp.Name = "btn_AddSupp";
-            this.btn_AddSupp.Size = new System.Drawing.Size(253, 57);
-            this.btn_AddSupp.TabIndex = 10;
-            this.btn_AddSupp.Text = "Add";
-            this.btn_AddSupp.UseVisualStyleBackColor = true;
-            // 
-            // btn_RemoveSup
-            // 
-            this.btn_RemoveSup.Location = new System.Drawing.Point(350, 397);
-            this.btn_RemoveSup.Name = "btn_RemoveSup";
-            this.btn_RemoveSup.Size = new System.Drawing.Size(253, 57);
-            this.btn_RemoveSup.TabIndex = 11;
-            this.btn_RemoveSup.Text = "Remove";
-            this.btn_RemoveSup.UseVisualStyleBackColor = true;
-            this.btn_RemoveSup.Click += new System.EventHandler(this.btn_RemoveSup_Click);
+            this.tabPage_Time.Location = new System.Drawing.Point(4, 25);
+            this.tabPage_Time.Name = "tabPage_Time";
+            this.tabPage_Time.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_Time.Size = new System.Drawing.Size(1280, 643);
+            this.tabPage_Time.TabIndex = 7;
+            this.tabPage_Time.Text = "Timetable";
+            this.tabPage_Time.UseVisualStyleBackColor = true;
             // 
             // SomerenUI
             // 
@@ -1305,6 +1317,7 @@
         private System.Windows.Forms.ColumnHeader Sup_name;
         private System.Windows.Forms.Button btn_RemoveSup;
         private System.Windows.Forms.Button btn_AddSupp;
+        private System.Windows.Forms.TabPage tabPage_Time;
     }
 }
 

@@ -465,7 +465,7 @@ namespace SomerenUI
         private void btn_RemoveSup_Click(object sender, EventArgs e)
         {
             Supervisor_Service service = new Supervisor_Service();
-            service.(Convert.ToInt32(Txt_Activities_Id.Text));
+            //service.(Convert.ToInt32(Txt_Activities_Id.Text));
         }
     }
 }
