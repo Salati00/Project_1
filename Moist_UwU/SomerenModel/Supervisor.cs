@@ -10,6 +10,6 @@ namespace SomerenModel
     {
             public String Name { get; set; }
             public int SuperviseID { get; set; }
-            public int ActivityID { get; set; }
+            public string ActivityName { get; set; }
     }
 }

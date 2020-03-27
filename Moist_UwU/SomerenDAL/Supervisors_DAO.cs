@@ -14,7 +14,9 @@ namespace SomerenDAL
     {
             public List<Supervisor> Db_Get_All_Supervisors()
             {
-                string query = "SELECT supervise_id, first_name, last_name, activity_id FROM supervises	join teacher ON supervises.teacher_id = teacher.teacher_id";
+                string query = "SELECT supervise_id, first_name, last_name, name AS [activity_name]" +
+                "FROM supervises join teacher ON supervises.teacher_id = teacher.teacher_id " +
+                "JOIN activities ON activities.activity_id = supervises.activity_id";
                 SqlParameter[] sqlParameters = new SqlParameter[0];
                 return ReadTables(ExecuteSelectQuery(query, sqlParameters));
             }
@@ -28,8 +30,8 @@ namespace SomerenDAL
                     Supervisor supervisor = new Supervisor()
                     {
                         Name = dr["first_name"].ToString() + " " + dr["last_name"].ToString(),
-                        ActivityID = (int)dr["activity_id"],
-                        SuperviseID = (int)dr["supervise_id"]
+                        ActivityName = (string)dr["activity_name"],
+                        SuperviseID = (int)dr["supervise_id"],
                     };
                     supervisors.Add(supervisor);
                 }
@@ -42,6 +44,27 @@ namespace SomerenDAL
             SqlParameter[] sqlParameters = new SqlParameter[1];
             sqlParameters[0] = new SqlParameter("@id", id);
             ExecuteNonQuery(query, sqlParameters);
+        }
+        private bool CheckExists(int id)
+        {
+            string query = "SELECT teacher_id FROM [supervises] " +
+                "where [teacher_id] = @id";
+            SqlParameter[] sqlParameters = new SqlParameter[1];
+            sqlParameters[0] = new SqlParameter("@id", id);
+            DataTable dt = ExecuteSelectQuery(query, sqlParameters);
+            return dt.Rows.Count != 0;
+        }
+        public void InsertSupervisor(int teach_id, int activity)
+        {
+            if (CheckExists(teach_id))
+                throw new Exception("Teacher is already a Supervisor");
+
+            string query = "insert into supervises(teacher_id,activity_id) " +
+            "values ( @teacher, @activity) ";
+            SqlParameter[] sqlParameters = new SqlParameter[2];
+            sqlParameters[0] = new SqlParameter("@teacher", teach_id);
+            sqlParameters[1] = new SqlParameter("@activity", activity);
+                ExecuteEditQuery(query, sqlParameters);
         }
 
     }

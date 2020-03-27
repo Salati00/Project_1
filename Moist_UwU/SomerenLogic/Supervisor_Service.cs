@@ -21,5 +21,9 @@ namespace SomerenLogic
         {
             supervisor_db.RemoveSupervisor(id);
         }
+        public void InsertSupervisor(int teach_id, int activity_id)
+        {
+                supervisor_db.InsertSupervisor(teach_id, activity_id);
+        }
     }
 }

@@ -46,8 +46,12 @@ namespace SomerenUI
                 case "Supervisors":
                     Supervisor_Service supService = new Supervisor_Service();
                     List<Supervisor> supList = supService.GetSupervisors();
-
                     PrintSup(listView_Sup, supList);
+                    Activity_Service actService = new Activity_Service();
+                    List<Activity> actList = actService.GetActivities();
+                    cmb_ActivityID.DataSource = actList;
+                    cmb_ActivityID.DisplayMember = "Name";
+                    cmb_ActivityID.ValueMember = "ID";
                     break;
 
                 case "Rooms":
@@ -84,8 +88,8 @@ namespace SomerenUI
                     Dtp_Activities_DatePart.Value = DateTime.Today;
                     Dtp_Activities_TimePart.Value = DateTime.UtcNow;
 
-                    Activity_Service actService = new Activity_Service();
-                    List<Activity> ActivityList = actService.GetActivities();
+                    Activity_Service actServe = new Activity_Service();
+                    List<Activity> ActivityList = actServe.GetActivities();
 
                     ListViewActivitiesPrint(Lst_Activities, ActivityList);
                     break;
@@ -330,7 +334,7 @@ namespace SomerenUI
             lv.Items.Clear();
             foreach (Supervisor s in supList)
             {
-                var row = new string[] { s.SuperviseID.ToString(), s.Name, s.ActivityID.ToString() };
+                var row = new string[] { s.SuperviseID.ToString(), s.Name, s.ActivityName.ToString() };
                 var lvi = new ListViewItem(row);
                 lv.Items.Add(lvi);
             }
@@ -483,12 +487,38 @@ namespace SomerenUI
         private void btn_RemoveSup_Click(object sender, EventArgs e)
         {
             Supervisor_Service service = new Supervisor_Service();
-            //service.(Convert.ToInt32(Txt_Activities_Id.Text));
+            if (MessageBox.Show("Are you sure you want to delete this item?", "Confirm Delete!", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                service.RemoveSup(Convert.ToInt32(listView_Sup.SelectedItems[0].Text));
+                foreach (ListViewItem item in listView_Sup.SelectedItems)
+                {
+                    listView_Sup.Items.Remove(item);
+                }
+            }
         }
 
         private void Lst_Activities_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
             EnDisableActivityButtons();
+        }
+
+        private void btn_AddSupp_Click(object sender, EventArgs e)
+        {
+            if (txtBox_Sup.Text != "" && Convert.ToInt32(txtBox_Sup.Text) > 0)
+            {
+                Supervisor_Service supServiceAdd = new Supervisor_Service();
+                try
+                {
+                    supServiceAdd.InsertSupervisor(Convert.ToInt32(txtBox_Sup.Text), Convert.ToInt32(cmb_ActivityID.SelectedValue));
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Invalid Entry");
+                }
+                showPanel("Supervisors");
+            }
+            else
+                MessageBox.Show("Please enter a teacher ID");
         }
     }
 }
