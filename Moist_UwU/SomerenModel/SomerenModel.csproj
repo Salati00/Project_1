@@ -53,6 +53,7 @@
     <Compile Include="Room.cs" />
     <Compile Include="Teacher.cs" />
     <Compile Include="Student.cs" />
+    <Compile Include="Timetable.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\Settings.settings">

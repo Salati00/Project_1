@@ -53,7 +53,6 @@
             this.Col_Activities_DateTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Col_Activities_Description = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.Lbl_Activities = new System.Windows.Forms.Label();
             this.Lbl_Supplies_Price = new System.Windows.Forms.Label();
             this.Txt_Supplies_Price = new System.Windows.Forms.TextBox();
             this.Lbl_Supplies_AmountSold = new System.Windows.Forms.Label();
@@ -116,6 +115,10 @@
             this.TabPage_Lecturers = new System.Windows.Forms.TabPage();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.TabPage_Supervisors = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cmb_ActivityID = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtBox_Sup = new System.Windows.Forms.TextBox();
             this.btn_RemoveSup = new System.Windows.Forms.Button();
             this.btn_AddSupp = new System.Windows.Forms.Button();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
@@ -123,6 +126,7 @@
             this.listView_Sup = new System.Windows.Forms.ListView();
             this.coll_ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Sup_name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Sup_Act = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TabPage_Activities = new System.Windows.Forms.TabPage();
             this.TabPage_Rooms = new System.Windows.Forms.TabPage();
             this.TabPage_Bar = new System.Windows.Forms.TabPage();
@@ -131,11 +135,13 @@
             this.TabPage_DrinkSup = new System.Windows.Forms.TabPage();
             this.TabPage_Revenue = new System.Windows.Forms.TabPage();
             this.tabPage_Time = new System.Windows.Forms.TabPage();
-            this.txtBox_Sup = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cmb_ActivityID = new System.Windows.Forms.ComboBox();
-            this.Sup_Act = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label6 = new System.Windows.Forms.Label();
+            this.listViewTimetable = new System.Windows.Forms.ListView();
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Lbl_Activities = new System.Windows.Forms.Label();
+            this.Lbl_Time = new System.Windows.Forms.Label();
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -157,6 +163,7 @@
             this.TabPage_CashReg.SuspendLayout();
             this.TabPage_DrinkSup.SuspendLayout();
             this.TabPage_Revenue.SuspendLayout();
+            this.tabPage_Time.SuspendLayout();
             this.SuspendLayout();
             // 
             // listViewStudents
@@ -168,7 +175,7 @@
             this.studentPhoneNumber});
             this.listViewStudents.HideSelection = false;
             this.listViewStudents.Location = new System.Drawing.Point(8, 41);
-            this.listViewStudents.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listViewStudents.Margin = new System.Windows.Forms.Padding(4);
             this.listViewStudents.Name = "listViewStudents";
             this.listViewStudents.Size = new System.Drawing.Size(1020, 377);
             this.listViewStudents.TabIndex = 5;
@@ -200,7 +207,7 @@
             this.pictureBox1.Image = global::SomerenUI.Properties.Resources.someren;
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
             this.pictureBox1.Location = new System.Drawing.Point(1100, 4);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(173, 151);
             this.pictureBox1.TabIndex = 0;
@@ -234,7 +241,7 @@
             this.pictureBox2.Image = global::SomerenUI.Properties.Resources.someren;
             this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
             this.pictureBox2.Location = new System.Drawing.Point(1087, 4);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(173, 151);
             this.pictureBox2.TabIndex = 0;
@@ -248,7 +255,7 @@
             this.columnHeader3});
             this.listViewRooms.HideSelection = false;
             this.listViewRooms.Location = new System.Drawing.Point(16, 43);
-            this.listViewRooms.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listViewRooms.Margin = new System.Windows.Forms.Padding(4);
             this.listViewRooms.Name = "listViewRooms";
             this.listViewRooms.Size = new System.Drawing.Size(1020, 377);
             this.listViewRooms.TabIndex = 5;
@@ -290,7 +297,7 @@
             this.listView_Lec.GridLines = true;
             this.listView_Lec.HideSelection = false;
             this.listView_Lec.Location = new System.Drawing.Point(4, 39);
-            this.listView_Lec.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listView_Lec.Margin = new System.Windows.Forms.Padding(4);
             this.listView_Lec.Name = "listView_Lec";
             this.listView_Lec.Size = new System.Drawing.Size(1020, 377);
             this.listView_Lec.TabIndex = 7;
@@ -317,7 +324,7 @@
             this.Lst_Activities.FullRowSelect = true;
             this.Lst_Activities.HideSelection = false;
             this.Lst_Activities.Location = new System.Drawing.Point(12, 43);
-            this.Lst_Activities.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Lst_Activities.Margin = new System.Windows.Forms.Padding(4);
             this.Lst_Activities.Name = "Lst_Activities";
             this.Lst_Activities.Size = new System.Drawing.Size(1020, 377);
             this.Lst_Activities.TabIndex = 5;
@@ -355,22 +362,11 @@
             this.pictureBox3.Image = global::SomerenUI.Properties.Resources.someren;
             this.pictureBox3.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.InitialImage")));
             this.pictureBox3.Location = new System.Drawing.Point(1087, 4);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(173, 151);
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
-            // 
-            // Lbl_Activities
-            // 
-            this.Lbl_Activities.AutoSize = true;
-            this.Lbl_Activities.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_Activities.Location = new System.Drawing.Point(4, 4);
-            this.Lbl_Activities.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.Lbl_Activities.Name = "Lbl_Activities";
-            this.Lbl_Activities.Size = new System.Drawing.Size(132, 33);
-            this.Lbl_Activities.TabIndex = 3;
-            this.Lbl_Activities.Text = "Activities";
             // 
             // Lbl_Supplies_Price
             // 
@@ -385,7 +381,7 @@
             // Txt_Supplies_Price
             // 
             this.Txt_Supplies_Price.Location = new System.Drawing.Point(401, 476);
-            this.Txt_Supplies_Price.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Txt_Supplies_Price.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_Supplies_Price.Name = "Txt_Supplies_Price";
             this.Txt_Supplies_Price.Size = new System.Drawing.Size(140, 22);
             this.Txt_Supplies_Price.TabIndex = 15;
@@ -404,7 +400,7 @@
             // Txt_Supplies_Sold
             // 
             this.Txt_Supplies_Sold.Location = new System.Drawing.Point(153, 476);
-            this.Txt_Supplies_Sold.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Txt_Supplies_Sold.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_Supplies_Sold.Name = "Txt_Supplies_Sold";
             this.Txt_Supplies_Sold.Size = new System.Drawing.Size(239, 22);
             this.Txt_Supplies_Sold.TabIndex = 13;
@@ -424,7 +420,7 @@
             // 
             this.Txt_Supplies_Id.Enabled = false;
             this.Txt_Supplies_Id.Location = new System.Drawing.Point(15, 428);
-            this.Txt_Supplies_Id.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Txt_Supplies_Id.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_Supplies_Id.Name = "Txt_Supplies_Id";
             this.Txt_Supplies_Id.Size = new System.Drawing.Size(119, 22);
             this.Txt_Supplies_Id.TabIndex = 11;
@@ -432,7 +428,7 @@
             // Btn_Supplies_Save
             // 
             this.Btn_Supplies_Save.Location = new System.Drawing.Point(589, 428);
-            this.Btn_Supplies_Save.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Btn_Supplies_Save.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_Supplies_Save.Name = "Btn_Supplies_Save";
             this.Btn_Supplies_Save.Size = new System.Drawing.Size(277, 63);
             this.Btn_Supplies_Save.TabIndex = 10;
@@ -453,7 +449,7 @@
             // Txt_Supplies_NewStock
             // 
             this.Txt_Supplies_NewStock.Location = new System.Drawing.Point(401, 428);
-            this.Txt_Supplies_NewStock.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Txt_Supplies_NewStock.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_Supplies_NewStock.Name = "Txt_Supplies_NewStock";
             this.Txt_Supplies_NewStock.Size = new System.Drawing.Size(140, 22);
             this.Txt_Supplies_NewStock.TabIndex = 8;
@@ -472,7 +468,7 @@
             // Txt_Supplies_NewName
             // 
             this.Txt_Supplies_NewName.Location = new System.Drawing.Point(153, 428);
-            this.Txt_Supplies_NewName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Txt_Supplies_NewName.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_Supplies_NewName.Name = "Txt_Supplies_NewName";
             this.Txt_Supplies_NewName.Size = new System.Drawing.Size(239, 22);
             this.Txt_Supplies_NewName.TabIndex = 6;
@@ -490,7 +486,7 @@
             this.Lst_Supplies.FullRowSelect = true;
             this.Lst_Supplies.HideSelection = false;
             this.Lst_Supplies.Location = new System.Drawing.Point(16, 43);
-            this.Lst_Supplies.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Lst_Supplies.Margin = new System.Windows.Forms.Padding(4);
             this.Lst_Supplies.Name = "Lst_Supplies";
             this.Lst_Supplies.Size = new System.Drawing.Size(1020, 377);
             this.Lst_Supplies.TabIndex = 5;
@@ -533,7 +529,7 @@
             this.pictureBox4.Image = global::SomerenUI.Properties.Resources.someren;
             this.pictureBox4.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.InitialImage")));
             this.pictureBox4.Location = new System.Drawing.Point(1064, 7);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(173, 151);
             this.pictureBox4.TabIndex = 0;
@@ -553,7 +549,7 @@
             // Btn_Register_Checkout
             // 
             this.Btn_Register_Checkout.Location = new System.Drawing.Point(608, 410);
-            this.Btn_Register_Checkout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Btn_Register_Checkout.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_Register_Checkout.Name = "Btn_Register_Checkout";
             this.Btn_Register_Checkout.Size = new System.Drawing.Size(260, 64);
             this.Btn_Register_Checkout.TabIndex = 12;
@@ -649,7 +645,7 @@
             this.pictureBox5.Image = global::SomerenUI.Properties.Resources.someren;
             this.pictureBox5.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.InitialImage")));
             this.pictureBox5.Location = new System.Drawing.Point(1064, 7);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(173, 151);
             this.pictureBox5.TabIndex = 0;
@@ -721,7 +717,7 @@
             this.pictureBox6.Image = global::SomerenUI.Properties.Resources.someren;
             this.pictureBox6.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox6.InitialImage")));
             this.pictureBox6.Location = new System.Drawing.Point(1064, 4);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(173, 151);
             this.pictureBox6.TabIndex = 0;
@@ -741,7 +737,7 @@
             // Btn_Activities_Add
             // 
             this.Btn_Activities_Add.Location = new System.Drawing.Point(1061, 433);
-            this.Btn_Activities_Add.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Btn_Activities_Add.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_Activities_Add.Name = "Btn_Activities_Add";
             this.Btn_Activities_Add.Size = new System.Drawing.Size(157, 49);
             this.Btn_Activities_Add.TabIndex = 6;
@@ -752,7 +748,7 @@
             // Btn_Activities_Delete
             // 
             this.Btn_Activities_Delete.Location = new System.Drawing.Point(1061, 490);
-            this.Btn_Activities_Delete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Btn_Activities_Delete.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_Activities_Delete.Name = "Btn_Activities_Delete";
             this.Btn_Activities_Delete.Size = new System.Drawing.Size(157, 49);
             this.Btn_Activities_Delete.TabIndex = 7;
@@ -785,7 +781,7 @@
             // 
             this.Txt_Activities_Id.Enabled = false;
             this.Txt_Activities_Id.Location = new System.Drawing.Point(16, 455);
-            this.Txt_Activities_Id.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Txt_Activities_Id.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_Activities_Id.Name = "Txt_Activities_Id";
             this.Txt_Activities_Id.Size = new System.Drawing.Size(119, 22);
             this.Txt_Activities_Id.TabIndex = 21;
@@ -803,7 +799,7 @@
             // Txt_Activities_Location
             // 
             this.Txt_Activities_Location.Location = new System.Drawing.Point(464, 455);
-            this.Txt_Activities_Location.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Txt_Activities_Location.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_Activities_Location.Name = "Txt_Activities_Location";
             this.Txt_Activities_Location.Size = new System.Drawing.Size(140, 22);
             this.Txt_Activities_Location.TabIndex = 19;
@@ -821,7 +817,7 @@
             // Txt_Activities_Name
             // 
             this.Txt_Activities_Name.Location = new System.Drawing.Point(184, 455);
-            this.Txt_Activities_Name.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Txt_Activities_Name.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_Activities_Name.Name = "Txt_Activities_Name";
             this.Txt_Activities_Name.Size = new System.Drawing.Size(251, 22);
             this.Txt_Activities_Name.TabIndex = 17;
@@ -829,7 +825,7 @@
             // Dtp_Activities_DatePart
             // 
             this.Dtp_Activities_DatePart.Location = new System.Drawing.Point(16, 514);
-            this.Dtp_Activities_DatePart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Dtp_Activities_DatePart.Margin = new System.Windows.Forms.Padding(4);
             this.Dtp_Activities_DatePart.Name = "Dtp_Activities_DatePart";
             this.Dtp_Activities_DatePart.Size = new System.Drawing.Size(275, 22);
             this.Dtp_Activities_DatePart.TabIndex = 27;
@@ -839,7 +835,7 @@
             // 
             this.Txt_Activities_Description.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Txt_Activities_Description.Location = new System.Drawing.Point(688, 455);
-            this.Txt_Activities_Description.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Txt_Activities_Description.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_Activities_Description.Name = "Txt_Activities_Description";
             this.Txt_Activities_Description.Size = new System.Drawing.Size(344, 83);
             this.Txt_Activities_Description.TabIndex = 28;
@@ -848,7 +844,7 @@
             // Dtp_Activities_TimePart
             // 
             this.Dtp_Activities_TimePart.Location = new System.Drawing.Point(300, 514);
-            this.Dtp_Activities_TimePart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Dtp_Activities_TimePart.Margin = new System.Windows.Forms.Padding(4);
             this.Dtp_Activities_TimePart.Name = "Dtp_Activities_TimePart";
             this.Dtp_Activities_TimePart.Size = new System.Drawing.Size(135, 22);
             this.Dtp_Activities_TimePart.TabIndex = 29;
@@ -866,7 +862,7 @@
             this.TabControl_Main.Controls.Add(this.tabPage_Time);
             this.TabControl_Main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabControl_Main.Location = new System.Drawing.Point(0, 0);
-            this.TabControl_Main.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TabControl_Main.Margin = new System.Windows.Forms.Padding(4);
             this.TabControl_Main.Name = "TabControl_Main";
             this.TabControl_Main.SelectedIndex = 0;
             this.TabControl_Main.Size = new System.Drawing.Size(1288, 672);
@@ -879,9 +875,9 @@
             this.TabPage_Application.Controls.Add(this.Btn_Exit);
             this.TabPage_Application.Controls.Add(this.lbl_Dashboard);
             this.TabPage_Application.Location = new System.Drawing.Point(4, 25);
-            this.TabPage_Application.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TabPage_Application.Margin = new System.Windows.Forms.Padding(4);
             this.TabPage_Application.Name = "TabPage_Application";
-            this.TabPage_Application.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TabPage_Application.Padding = new System.Windows.Forms.Padding(4);
             this.TabPage_Application.Size = new System.Drawing.Size(1280, 643);
             this.TabPage_Application.TabIndex = 0;
             this.TabPage_Application.Text = "Application";
@@ -892,7 +888,7 @@
             this.pictureBox8.Image = global::SomerenUI.Properties.Resources.someren;
             this.pictureBox8.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox8.InitialImage")));
             this.pictureBox8.Location = new System.Drawing.Point(1011, 39);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(173, 151);
             this.pictureBox8.TabIndex = 3;
@@ -902,7 +898,7 @@
             // Btn_Exit
             // 
             this.Btn_Exit.Location = new System.Drawing.Point(8, 110);
-            this.Btn_Exit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Btn_Exit.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_Exit.Name = "Btn_Exit";
             this.Btn_Exit.Size = new System.Drawing.Size(243, 33);
             this.Btn_Exit.TabIndex = 2;
@@ -926,9 +922,9 @@
             this.TabPage_Students.Controls.Add(this.lbl_Students);
             this.TabPage_Students.Controls.Add(this.pictureBox1);
             this.TabPage_Students.Location = new System.Drawing.Point(4, 25);
-            this.TabPage_Students.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TabPage_Students.Margin = new System.Windows.Forms.Padding(4);
             this.TabPage_Students.Name = "TabPage_Students";
-            this.TabPage_Students.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TabPage_Students.Padding = new System.Windows.Forms.Padding(4);
             this.TabPage_Students.Size = new System.Drawing.Size(1280, 643);
             this.TabPage_Students.TabIndex = 1;
             this.TabPage_Students.Text = "Students";
@@ -940,7 +936,7 @@
             this.TabPage_Lecturers.Controls.Add(this.lbl_Lec);
             this.TabPage_Lecturers.Controls.Add(this.listView_Lec);
             this.TabPage_Lecturers.Location = new System.Drawing.Point(4, 25);
-            this.TabPage_Lecturers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TabPage_Lecturers.Margin = new System.Windows.Forms.Padding(4);
             this.TabPage_Lecturers.Name = "TabPage_Lecturers";
             this.TabPage_Lecturers.Size = new System.Drawing.Size(1280, 643);
             this.TabPage_Lecturers.TabIndex = 5;
@@ -952,7 +948,7 @@
             this.pictureBox7.Image = global::SomerenUI.Properties.Resources.someren;
             this.pictureBox7.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox7.InitialImage")));
             this.pictureBox7.Location = new System.Drawing.Point(1100, 4);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(173, 151);
             this.pictureBox7.TabIndex = 8;
@@ -977,6 +973,39 @@
             this.TabPage_Supervisors.TabIndex = 6;
             this.TabPage_Supervisors.Text = "Supervisors";
             this.TabPage_Supervisors.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(1139, 238);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(52, 17);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Activity";
+            // 
+            // cmb_ActivityID
+            // 
+            this.cmb_ActivityID.FormattingEnabled = true;
+            this.cmb_ActivityID.Location = new System.Drawing.Point(1100, 258);
+            this.cmb_ActivityID.Name = "cmb_ActivityID";
+            this.cmb_ActivityID.Size = new System.Drawing.Size(131, 24);
+            this.cmb_ActivityID.TabIndex = 14;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(1076, 180);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(176, 17);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Teacher to Supervisor (ID)";
+            // 
+            // txtBox_Sup
+            // 
+            this.txtBox_Sup.Location = new System.Drawing.Point(1109, 200);
+            this.txtBox_Sup.Name = "txtBox_Sup";
+            this.txtBox_Sup.Size = new System.Drawing.Size(106, 22);
+            this.txtBox_Sup.TabIndex = 12;
             // 
             // btn_RemoveSup
             // 
@@ -1005,7 +1034,7 @@
             this.pictureBox9.Image = global::SomerenUI.Properties.Resources.someren;
             this.pictureBox9.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox9.InitialImage")));
             this.pictureBox9.Location = new System.Drawing.Point(1100, 6);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(173, 151);
             this.pictureBox9.TabIndex = 9;
@@ -1049,10 +1078,15 @@
             this.Sup_name.Text = "Name";
             this.Sup_name.Width = 300;
             // 
+            // Sup_Act
+            // 
+            this.Sup_Act.Text = "Activity";
+            this.Sup_Act.Width = 325;
+            // 
             // TabPage_Activities
             // 
-            this.TabPage_Activities.Controls.Add(this.Dtp_Activities_TimePart);
             this.TabPage_Activities.Controls.Add(this.Lbl_Activities);
+            this.TabPage_Activities.Controls.Add(this.Dtp_Activities_TimePart);
             this.TabPage_Activities.Controls.Add(this.Txt_Activities_Description);
             this.TabPage_Activities.Controls.Add(this.Txt_Activities_Location);
             this.TabPage_Activities.Controls.Add(this.Dtp_Activities_DatePart);
@@ -1067,9 +1101,9 @@
             this.TabPage_Activities.Controls.Add(this.Lbl_Activities_Id);
             this.TabPage_Activities.Controls.Add(this.pictureBox3);
             this.TabPage_Activities.Location = new System.Drawing.Point(4, 25);
-            this.TabPage_Activities.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TabPage_Activities.Margin = new System.Windows.Forms.Padding(4);
             this.TabPage_Activities.Name = "TabPage_Activities";
-            this.TabPage_Activities.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TabPage_Activities.Padding = new System.Windows.Forms.Padding(4);
             this.TabPage_Activities.Size = new System.Drawing.Size(1280, 643);
             this.TabPage_Activities.TabIndex = 3;
             this.TabPage_Activities.Text = "Activities";
@@ -1081,9 +1115,9 @@
             this.TabPage_Rooms.Controls.Add(this.label1);
             this.TabPage_Rooms.Controls.Add(this.pictureBox2);
             this.TabPage_Rooms.Location = new System.Drawing.Point(4, 25);
-            this.TabPage_Rooms.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TabPage_Rooms.Margin = new System.Windows.Forms.Padding(4);
             this.TabPage_Rooms.Name = "TabPage_Rooms";
-            this.TabPage_Rooms.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TabPage_Rooms.Padding = new System.Windows.Forms.Padding(4);
             this.TabPage_Rooms.Size = new System.Drawing.Size(1280, 643);
             this.TabPage_Rooms.TabIndex = 4;
             this.TabPage_Rooms.Text = "Rooms";
@@ -1093,9 +1127,9 @@
             // 
             this.TabPage_Bar.Controls.Add(this.TabControl_Bar);
             this.TabPage_Bar.Location = new System.Drawing.Point(4, 25);
-            this.TabPage_Bar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TabPage_Bar.Margin = new System.Windows.Forms.Padding(4);
             this.TabPage_Bar.Name = "TabPage_Bar";
-            this.TabPage_Bar.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TabPage_Bar.Padding = new System.Windows.Forms.Padding(4);
             this.TabPage_Bar.Size = new System.Drawing.Size(1280, 643);
             this.TabPage_Bar.TabIndex = 2;
             this.TabPage_Bar.Text = "Bar";
@@ -1108,7 +1142,7 @@
             this.TabControl_Bar.Controls.Add(this.TabPage_Revenue);
             this.TabControl_Bar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabControl_Bar.Location = new System.Drawing.Point(4, 4);
-            this.TabControl_Bar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TabControl_Bar.Margin = new System.Windows.Forms.Padding(4);
             this.TabControl_Bar.Name = "TabControl_Bar";
             this.TabControl_Bar.SelectedIndex = 0;
             this.TabControl_Bar.Size = new System.Drawing.Size(1272, 635);
@@ -1125,9 +1159,9 @@
             this.TabPage_CashReg.Controls.Add(this.label3);
             this.TabPage_CashReg.Controls.Add(this.label4);
             this.TabPage_CashReg.Location = new System.Drawing.Point(4, 25);
-            this.TabPage_CashReg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TabPage_CashReg.Margin = new System.Windows.Forms.Padding(4);
             this.TabPage_CashReg.Name = "TabPage_CashReg";
-            this.TabPage_CashReg.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TabPage_CashReg.Padding = new System.Windows.Forms.Padding(4);
             this.TabPage_CashReg.Size = new System.Drawing.Size(1264, 606);
             this.TabPage_CashReg.TabIndex = 0;
             this.TabPage_CashReg.Text = "Cash Register";
@@ -1150,10 +1184,10 @@
             this.TabPage_DrinkSup.Controls.Add(this.Btn_Supplies_Save);
             this.TabPage_DrinkSup.Controls.Add(this.Lbl_Supplies_NewStock);
             this.TabPage_DrinkSup.Location = new System.Drawing.Point(4, 25);
-            this.TabPage_DrinkSup.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TabPage_DrinkSup.Margin = new System.Windows.Forms.Padding(4);
             this.TabPage_DrinkSup.Name = "TabPage_DrinkSup";
-            this.TabPage_DrinkSup.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.TabPage_DrinkSup.Size = new System.Drawing.Size(1261, 604);
+            this.TabPage_DrinkSup.Padding = new System.Windows.Forms.Padding(4);
+            this.TabPage_DrinkSup.Size = new System.Drawing.Size(1264, 606);
             this.TabPage_DrinkSup.TabIndex = 1;
             this.TabPage_DrinkSup.Text = "Drink Supplies";
             this.TabPage_DrinkSup.UseVisualStyleBackColor = true;
@@ -1166,16 +1200,18 @@
             this.TabPage_Revenue.Controls.Add(this.pictureBox6);
             this.TabPage_Revenue.Controls.Add(this.mcRev);
             this.TabPage_Revenue.Location = new System.Drawing.Point(4, 25);
-            this.TabPage_Revenue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TabPage_Revenue.Margin = new System.Windows.Forms.Padding(4);
             this.TabPage_Revenue.Name = "TabPage_Revenue";
-            this.TabPage_Revenue.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.TabPage_Revenue.Size = new System.Drawing.Size(1261, 604);
+            this.TabPage_Revenue.Padding = new System.Windows.Forms.Padding(4);
+            this.TabPage_Revenue.Size = new System.Drawing.Size(1264, 606);
             this.TabPage_Revenue.TabIndex = 2;
             this.TabPage_Revenue.Text = "Revenue Report";
             this.TabPage_Revenue.UseVisualStyleBackColor = true;
             // 
             // tabPage_Time
             // 
+            this.tabPage_Time.Controls.Add(this.Lbl_Time);
+            this.tabPage_Time.Controls.Add(this.listViewTimetable);
             this.tabPage_Time.Location = new System.Drawing.Point(4, 25);
             this.tabPage_Time.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage_Time.Name = "tabPage_Time";
@@ -1185,43 +1221,63 @@
             this.tabPage_Time.Text = "Timetable";
             this.tabPage_Time.UseVisualStyleBackColor = true;
             // 
-            // txtBox_Sup
+            // listViewTimetable
             // 
-            this.txtBox_Sup.Location = new System.Drawing.Point(1109, 200);
-            this.txtBox_Sup.Name = "txtBox_Sup";
-            this.txtBox_Sup.Size = new System.Drawing.Size(106, 22);
-            this.txtBox_Sup.TabIndex = 12;
+            this.listViewTimetable.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader7,
+            this.columnHeader13});
+            this.listViewTimetable.HideSelection = false;
+            this.listViewTimetable.Location = new System.Drawing.Point(25, 76);
+            this.listViewTimetable.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listViewTimetable.Name = "listViewTimetable";
+            this.listViewTimetable.Size = new System.Drawing.Size(1092, 442);
+            this.listViewTimetable.TabIndex = 11;
+            this.listViewTimetable.UseCompatibleStateImageBehavior = false;
+            this.listViewTimetable.View = System.Windows.Forms.View.Details;
             // 
-            // label5
+            // columnHeader4
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(1076, 180);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(176, 17);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Teacher to Supervisor (ID)";
+            this.columnHeader4.Text = "Activity";
+            this.columnHeader4.Width = 200;
             // 
-            // cmb_ActivityID
+            // columnHeader5
             // 
-            this.cmb_ActivityID.FormattingEnabled = true;
-            this.cmb_ActivityID.Location = new System.Drawing.Point(1100, 258);
-            this.cmb_ActivityID.Name = "cmb_ActivityID";
-            this.cmb_ActivityID.Size = new System.Drawing.Size(131, 24);
-            this.cmb_ActivityID.TabIndex = 14;
+            this.columnHeader5.Text = "Date and Time";
+            this.columnHeader5.Width = 200;
             // 
-            // Sup_Act
+            // columnHeader7
             // 
-            this.Sup_Act.Text = "Activity";
-            this.Sup_Act.Width = 325;
+            this.columnHeader7.Text = "Location";
+            this.columnHeader7.Width = 200;
             // 
-            // label6
+            // Lbl_Activities
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(1139, 238);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 17);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "Activity";
+            this.Lbl_Activities.AutoSize = true;
+            this.Lbl_Activities.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Activities.Location = new System.Drawing.Point(10, 6);
+            this.Lbl_Activities.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Lbl_Activities.Name = "Lbl_Activities";
+            this.Lbl_Activities.Size = new System.Drawing.Size(132, 33);
+            this.Lbl_Activities.TabIndex = 30;
+            this.Lbl_Activities.Text = "Activities";
+            // 
+            // Lbl_Time
+            // 
+            this.Lbl_Time.AutoSize = true;
+            this.Lbl_Time.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Time.Location = new System.Drawing.Point(19, 11);
+            this.Lbl_Time.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Lbl_Time.Name = "Lbl_Time";
+            this.Lbl_Time.Size = new System.Drawing.Size(144, 33);
+            this.Lbl_Time.TabIndex = 31;
+            this.Lbl_Time.Text = "Timetable";
+            // 
+            // columnHeader13
+            // 
+            this.columnHeader13.Text = "Supervisor(s)";
+            this.columnHeader13.Width = 200;
             // 
             // SomerenUI
             // 
@@ -1230,7 +1286,7 @@
             this.ClientSize = new System.Drawing.Size(1288, 672);
             this.Controls.Add(this.TabControl_Main);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SomerenUI";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Text = "Someren";
@@ -1265,6 +1321,8 @@
             this.TabPage_DrinkSup.PerformLayout();
             this.TabPage_Revenue.ResumeLayout(false);
             this.TabPage_Revenue.PerformLayout();
+            this.tabPage_Time.ResumeLayout(false);
+            this.tabPage_Time.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1293,7 +1351,6 @@
         private System.Windows.Forms.ColumnHeader Col_Activities_Location;
         private System.Windows.Forms.ColumnHeader Col_Activities_DateTime;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label Lbl_Activities;
         private System.Windows.Forms.ListView Lst_Supplies;
         private System.Windows.Forms.ColumnHeader col_id;
         private System.Windows.Forms.ColumnHeader col_cost;
@@ -1377,6 +1434,13 @@
         private System.Windows.Forms.ComboBox cmb_ActivityID;
         private System.Windows.Forms.ColumnHeader Sup_Act;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label Lbl_Activities;
+        private System.Windows.Forms.Label Lbl_Time;
+        private System.Windows.Forms.ListView listViewTimetable;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader13;
     }
 }
 

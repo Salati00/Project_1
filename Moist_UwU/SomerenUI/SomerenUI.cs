@@ -104,6 +104,12 @@ namespace SomerenUI
                     mcRev.MaxDate = DateTime.Today;
                     PrintReport();
                     break;
+                case "Timetable":
+                    Timetable_Service timeServ = new Timetable_Service();
+                    List<Timetable> TimetableList = timeServ.GetTimetable();
+
+                    ListViewTimetablePrint(listViewTimetable, TimetableList);
+                    break;
 
                 default:
                     break;
@@ -136,7 +142,31 @@ namespace SomerenUI
                 Lst_RegDrink.Items.Add(lvi);
             }
         }
+        public void ListViewTimetablePrint(ListView lv, List<Timetable> timetables)
+        {
+            lv.Items.Clear();
+            string oldname = "";
 
+            foreach (Timetable t in timetables)
+            {
+                var row = new string[] { t.Name, t.Date.ToString(), t.Location, t.Supervisor };
+                var lvi = new ListViewItem(row);
+                if(t.Name != oldname)
+                    lv.Items.Add(lvi);
+                else
+                {
+                    foreach(ListViewItem it in listViewTimetable.Items)
+                    {
+                        if (it.SubItems[0].Text.Contains(oldname))
+                        {
+                            it.SubItems[3].Text += ", " + t.Supervisor;
+                        }
+                    }
+                }
+                oldname = t.Name;
+            }
+
+        }
         //Creating List view for teachers with 2 columns
         public void ListViewLecPrint(ListView lv, List<Teacher> lecList)
         {
@@ -390,6 +420,9 @@ namespace SomerenUI
 
                         }
                     }
+                    break;
+                case 7:
+                    { showPanel("Timetable"); }
                     break;
                 default:
                     break;
