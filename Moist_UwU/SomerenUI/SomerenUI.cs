@@ -402,14 +402,14 @@ namespace SomerenUI
             MessageBox.Show("What happens in Someren, stays in Someren kids!");
         }
 
-        private void Lst_Activities_SelectedIndexChanged(object sender, EventArgs e)
+        /*private void Lst_Activities_SelectedIndexChanged(object sender, EventArgs e)
         {
-            EnDisableActivityButtons();
-        }
+           
+        }*/
 
-        private void EnDisableActivityButtons()
+        private void EnDisableActivityButtons(bool Override = false)
         {
-            if (Lst_Activities.SelectedItems.Count > 0)
+            if (Lst_Activities.SelectedItems.Count > 0 && !Override)
             {
                 Btn_Activities_Add.Text = "Save Changes";
                 Btn_Activities_Delete.Visible = true;
@@ -441,7 +441,11 @@ namespace SomerenUI
         private void Btn_Activities_Delete_Click(object sender, EventArgs e)
         {
             Activity_Service eys = new Activity_Service();
-            eys.RemoveActivity(Convert.ToInt32(Txt_Activities_Id.Text));
+            if (MessageBox.Show("Are you sure you want to delete this item?", "Confirm Delete!", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                eys.RemoveActivity(Convert.ToInt32(Txt_Activities_Id.Text));
+                EnDisableActivityButtons(Override: true);
+            }
         }
 
         private void Btn_Activities_Add_Click(object sender, EventArgs e)
@@ -449,11 +453,25 @@ namespace SomerenUI
             Activity_Service eys = new Activity_Service();
             if (!Btn_Activities_Delete.Visible)
             {
-                eys.InsertActivity(Txt_Activities_Name.Text, Txt_Activities_Location.Text, (Dtp_Activities_DatePart.Value.Date + Dtp_Activities_TimePart.Value.TimeOfDay), Txt_Activities_Description.Text);
+                try
+                {
+                    eys.InsertActivity(Txt_Activities_Name.Text, Txt_Activities_Location.Text, (Dtp_Activities_DatePart.Value.Date + Dtp_Activities_TimePart.Value.TimeOfDay), Txt_Activities_Description.Text);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
             else
             {
-                eys.UpdateActivity(Convert.ToInt32(Txt_Activities_Id.Text), Txt_Activities_Name.Text, Txt_Activities_Location.Text, (Dtp_Activities_DatePart.Value.Date + Dtp_Activities_TimePart.Value.TimeOfDay), Txt_Activities_Description.Text);
+                try
+                {
+                    eys.UpdateActivity(Convert.ToInt32(Txt_Activities_Id.Text), Txt_Activities_Name.Text, Txt_Activities_Location.Text, (Dtp_Activities_DatePart.Value.Date + Dtp_Activities_TimePart.Value.TimeOfDay), Txt_Activities_Description.Text);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
 
             Btn_Activities_Add.Text = "Add";
@@ -466,6 +484,11 @@ namespace SomerenUI
         {
             Supervisor_Service service = new Supervisor_Service();
             //service.(Convert.ToInt32(Txt_Activities_Id.Text));
+        }
+
+        private void Lst_Activities_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            EnDisableActivityButtons();
         }
     }
 }

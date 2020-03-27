@@ -15,12 +15,16 @@ namespace SomerenDAL
         {
             try
             {
+                if (checkExists(Name))
+                    throw new Exception("Activity already present");
+                Dt = Dt.AddSeconds(-Dt.Second);
+
                 string query = "insert into activities(name,location,date,description) " +
                 "values (@name,@location,@date,@description) ";
                 SqlParameter[] sqlParameters = new SqlParameter[4];
                 sqlParameters[0] = new SqlParameter("@name", Name);
                 sqlParameters[1] = new SqlParameter("@location", Location);
-                sqlParameters[2] = new SqlParameter("@date", Dt.Date);
+                sqlParameters[2] = new SqlParameter("@date", Dt);
                 sqlParameters[3] = new SqlParameter("@description", Description);
                 ExecuteEditQuery(query, sqlParameters);
             }
@@ -35,13 +39,15 @@ namespace SomerenDAL
         {
             try
             {
+                Dt = Dt.AddSeconds(-Dt.Second);
+
                 string query = "Update activities " +
                     "set name = @name, location = @location, date = @date, description = @description " +
                     "where activity_id = @id";
                 SqlParameter[] sqlParameters = new SqlParameter[5];
                 sqlParameters[0] = new SqlParameter("@name", Name);
                 sqlParameters[1] = new SqlParameter("@location", Location);
-                sqlParameters[2] = new SqlParameter("@date", Dt.Date);
+                sqlParameters[2] = new SqlParameter("@date", Dt);
                 sqlParameters[3] = new SqlParameter("@description", Description);
                 sqlParameters[4] = new SqlParameter("@id", ID);
                 ExecuteEditQuery(query, sqlParameters);
@@ -50,6 +56,16 @@ namespace SomerenDAL
             {
                 throw ex;
             }
+        }
+
+        private bool checkExists(string Name)
+        {
+            string query = "SELECT * FROM [activities] " +
+                "where [name] = @name";
+            SqlParameter[] sqlParameters = new SqlParameter[1];
+            sqlParameters[0] = new SqlParameter("@name", Name);
+            DataTable dt = ExecuteSelectQuery(query, sqlParameters);
+            return dt != null;
         }
 
         public List<Activity> Get_Activities()
